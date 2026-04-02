@@ -24,6 +24,7 @@ import Image from "next/image";
 // ─────────────────────────────────────────────
 const COUNTRY_CONFIG = {
   us: {
+    img : "/us_flag.png",
     flag: "🇺🇸",
     label: "US",
     promoText: (
@@ -34,6 +35,7 @@ const COUNTRY_CONFIG = {
     ),
   },
   ca: {
+    img : "/ca_flag.png",
     flag: "🇨🇦",
     label: "CA",
     promoText: (
@@ -305,7 +307,7 @@ export default function Navbar() {
           aria-label={`${country.label} flag`}
           title={country.label}
         >
-          {country.flag}
+            <Image src={country.img} alt={`${country.label} flag`} width={20} height={15} />
         </span>
         <span>{country.promoText}</span>
       </div>
