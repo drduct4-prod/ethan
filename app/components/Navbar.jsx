@@ -320,7 +320,7 @@ export default function Navbar() {
           <Link href="/" className="flex shrink-0 items-center gap-2">
             <Image
               src="/black_logo.png"
-              alt="Airflow Hub Logo"
+              alt="Ethan Duct Cleaning"
               width={260}
               height={40}
               loading="eager"
