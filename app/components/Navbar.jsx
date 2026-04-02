@@ -98,7 +98,6 @@ const NAV_LINKS = [
   { label: "Who we serve", href: "/who-we-serve", hasChevron: true },
   { label: "Pricing", href: "/pricing" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Promos", href: "/promos" },
   { label: "About", href: "/about", hasChevron: true },
 ];
 
