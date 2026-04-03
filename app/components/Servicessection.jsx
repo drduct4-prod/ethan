@@ -384,7 +384,7 @@ function ServiceCard({ service, Icon }) {
         {/* Blue accent bar — animates in on hover */}
         <div
           ref={accentRef}
-          className="absolute bottom-0 left-0 h-[3px] w-full origin-left bg-[#5E7AC4]"
+          className="absolute bottom-0 left-0 h-0.75 w-full origin-left bg-[#5E7AC4]"
           style={{ scaleX: 0 }}
           aria-hidden="true"
         />
