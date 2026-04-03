@@ -205,18 +205,18 @@ export default function WhyChooseUs() {
               <article
                 key={reason.title}
                 // GSAP targets this class; hover styles are pure CSS
-                className="why-card group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#5E7AC4]/35 hover:bg-white/[0.06] hover:shadow-[0_0_32px_rgba(94,122,196,0.12)]"
+                className="why-card group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/3 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#5E7AC4]/35 hover:bg-white/[0.06] hover:shadow-[0_0_32px_rgba(94,122,196,0.12)]"
               >
                 {/* Card number watermark */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute right-5 top-4 select-none text-[52px] font-black leading-none text-black/[0.04] transition-colors duration-300 group-hover:text-[#5E7AC4]/[0.07]"
+                  className="pointer-events-none absolute right-5 top-4 select-none text-[52px] font-black leading-none text-black/4 transition-colors duration-300 group-hover:text-[#5E7AC4]/[0.07]"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
                 {/* Icon bubble */}
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.05] transition-all duration-300 group-hover:border-[#5E7AC4]/40 group-hover:bg-[#5E7AC4]/10">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/8 bg-white/5 transition-all duration-300 group-hover:border-[#5E7AC4]/40 group-hover:bg-[#5E7AC4]/10">
                   <Icon
                     className="h-5 w-5 text-black/50 transition-colors duration-300 group-hover:text-[#5E7AC4]"
                     strokeWidth={1.75}
@@ -238,7 +238,7 @@ export default function WhyChooseUs() {
                 {/* Bottom accent line — animates in on hover */}
                 <div
                   aria-hidden="true"
-                  className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-[#5E7AC4] transition-all duration-500 group-hover:w-full"
+                  className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-[#5E7AC4] transition-all duration-500 group-hover:w-full"
                 />
               </article>
             );
