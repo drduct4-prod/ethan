@@ -6,6 +6,7 @@ import WhyChooseUs from '../components/WhyChooseUs'
 import HVACBentoSection from '../components/HvaBentoSection'
 import TestimonialsSection from '../components/Testimonials'
 import FAQSection from '../components/FAQ'
+import Footer from '../components/Footer'
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
     <HVACBentoSection/>
     <TestimonialsSection/>
     <FAQSection/>
+    <Footer/>
     
     
     
