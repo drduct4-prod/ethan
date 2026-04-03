@@ -205,7 +205,7 @@ export default function WhyChooseUs() {
               <article
                 key={reason.title}
                 // GSAP targets this class; hover styles are pure CSS
-                className="why-card group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/3 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#5E7AC4]/35 hover:bg-white/[0.06] hover:shadow-[0_0_32px_rgba(94,122,196,0.12)]"
+                className="why-card group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/3 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#5E7AC4]/35 hover:bg-white/6 hover:shadow-[0_0_32px_rgba(94,122,196,0.12)]"
               >
                 {/* Card number watermark */}
                 <span
