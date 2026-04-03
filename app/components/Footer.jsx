@@ -78,7 +78,7 @@ export default function Footer() {
       className={`w-full bg-black ${urbanist.className}`}
     >
       {/* Top accent line matching navbar border */}
-      <div className="h-px w-full bg-white/[0.08]" />
+      <div className="h-px w-full bg-white/8" />
 
       {/* ══════════════════════════════════════════════
           MAIN GRID
@@ -105,7 +105,7 @@ export default function Footer() {
 
             {/* Description */}
             <p
-              className={`max-w-xs text-[12.5px] leading-relaxed text-white/[0.45] lg:text-[13px] ${inter.className}`}
+              className={`max-w-xs text-[12.5px] leading-relaxed text-white/45 lg:text-[13px] ${inter.className}`}
             >
               Breathe easier with Impeccable Solution Duct Cleaning — your trusted
               experts for professional air duct and vent cleaning across{" "}
@@ -222,7 +222,7 @@ export default function Footer() {
                 >
                   info@impeccableducts.com
                 </ContactRow>
-                <div className="flex items-start gap-2.5 pl-[22px]">
+                <div className="flex items-start gap-2.5 pl-5.5">
                   <a
                     href="mailto:impeccablesolution0@gmail.com"
                     className="text-[12px] text-white/40 transition-colors duration-150 hover:text-[#5E7AC4] break-all"
@@ -318,14 +318,14 @@ function FooterHeading({ children }) {
 // ─────────────────────────────────────────────────────────────
 function ContactRow({ icon: Icon, label, href, isLink, children }) {
   const content = (
-    <span className="text-[12.5px] leading-snug text-white/50 transition-colors duration-150 group-hover:text-[#5E7AC4] break-words">
+    <span className="text-[12.5px] leading-snug text-white/50 transition-colors duration-150 group-hover:text-[#5E7AC4] wrap-break-words">
       {children}
     </span>
   );
 
   return (
     <div className="group flex items-start gap-2.5">
-      <div className="mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center">
+      <div className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center">
         <Icon
           className="h-3.5 w-3.5 text-[#5E7AC4]/60 transition-colors duration-150 group-hover:text-[#5E7AC4]"
           strokeWidth={1.75}
