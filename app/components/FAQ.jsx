@@ -361,14 +361,14 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
 
           {/* Rotating icon — CSS only, no GSAP, max performance */}
           <span
-            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-colors duration-200"
+            className="cursor-pointer flex h-7 w-7 shrink-0 items-center justify-center rounded transition-colors duration-200"
             style={{
-              background: isOpen ? "#5E7AC4" : "rgba(0,0,0,0.05)",
+              background: isOpen ? "rgba(0,0,0,0.05)" : "rgba(0,0,0,0.05)",
             }}
             aria-hidden="true"
           >
             {isOpen ? (
-              <Minus className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
+              <Minus className="h-3.5 w-3.5 text-black" strokeWidth={2.5} />
             ) : (
               <Plus className="h-3.5 w-3.5 text-gray-600" strokeWidth={2.5} />
             )}

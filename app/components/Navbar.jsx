@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import gsap from "gsap";
 import {
   Wind,
@@ -24,7 +24,7 @@ import Image from "next/image";
 // ─────────────────────────────────────────────
 const COUNTRY_CONFIG = {
   us: {
-    img : "/us_flag.png",
+    img: "/us_flag.png",
     flag: "🇺🇸",
     label: "US",
     promoText: (
@@ -35,7 +35,7 @@ const COUNTRY_CONFIG = {
     ),
   },
   ca: {
-    img : "/ca_flag.png",
+    img: "/ca_flag.png",
     flag: "🇨🇦",
     label: "CA",
     promoText: (
@@ -52,7 +52,8 @@ const COUNTRY_CONFIG = {
 const DEFAULT_COUNTRY = "us";
 
 // ─────────────────────────────────────────────
-// Services data
+// Services data — hrefs are base paths (no country prefix).
+// The withCountry() helper prepends the active country at render time.
 // ─────────────────────────────────────────────
 const SERVICES = [
   {
@@ -93,6 +94,7 @@ const SERVICES = [
   },
 ];
 
+// Base hrefs — country prefix is applied via withCountry()
 const NAV_LINKS = [
   { label: "Services", href: "#", isDropdown: true },
   { label: "Who we serve", href: "/who-we-serve", hasChevron: true },
@@ -102,10 +104,21 @@ const NAV_LINKS = [
 ];
 
 // ─────────────────────────────────────────────
-// Custom hook — detect country from pathname
-// e.g. /us/... → "us", /ca/... → "ca"
+// Helper — strip leading country segment from pathname
+// e.g. /us/services/air-duct-cleaning → /services/air-duct-cleaning
 // ─────────────────────────────────────────────
-function useCountry() {
+function stripCountryPrefix(pathname) {
+  const segments = pathname?.split("/").filter(Boolean) ?? [];
+  if (segments[0] && COUNTRY_CONFIG[segments[0].toLowerCase()]) {
+    return "/" + segments.slice(1).join("/");
+  }
+  return pathname ?? "/";
+}
+
+// ─────────────────────────────────────────────
+// Custom hook — resolve country from pathname
+// ─────────────────────────────────────────────
+function useCountryFromPath() {
   const pathname = usePathname();
   const segments = pathname?.split("/").filter(Boolean);
   const code = segments?.[0]?.toLowerCase();
@@ -117,33 +130,90 @@ function useCountry() {
 // ─────────────────────────────────────────────
 export default function Navbar() {
   const pathname = usePathname();
-  const countryCode = useCountry();
-  const country = COUNTRY_CONFIG[countryCode];
+  const router = useRouter();
 
+  // Derive country from URL on first render; stay in sync on navigation
+  const pathCountry = useCountryFromPath();
+  const [selectedCountry, setSelectedCountry] = useState(pathCountry);
+  const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
+
+  // Keep selectedCountry in sync when the user navigates (e.g. browser back)
+  useEffect(() => {
+    setSelectedCountry(pathCountry);
+  }, [pathCountry]);
+
+  const country = COUNTRY_CONFIG[selectedCountry];
+
+  // ── Country switching ─────────────────────
+  const handleCountryChange = useCallback(
+    (code) => {
+      if (code === selectedCountry) {
+        setCountryDropdownOpen(false);
+        return;
+      }
+      setSelectedCountry(code);
+      setCountryDropdownOpen(false);
+
+      // Navigate to the same base path under the new country prefix
+      const basePath = stripCountryPrefix(pathname);
+      router.push(`/${code}${basePath === "/" ? "" : basePath}`);
+    },
+    [selectedCountry, pathname, router],
+  );
+
+  // ── Link helper — prefix every path with active country ──
+  const withCountry = useCallback(
+    (href) => {
+      if (!href || href === "#" || href.startsWith("http")) return href;
+      return `/${selectedCountry}${href}`;
+    },
+    [selectedCountry],
+  );
+
+  // ── Active-link check (country-aware) ────
+  const isActive = useCallback(
+    (href) => {
+      if (href === "#") return false;
+      const prefixed = withCountry(href);
+      return pathname === prefixed || pathname.startsWith(prefixed + "/");
+    },
+    [pathname, withCountry],
+  );
+
+  // ── UI state ──────────────────────────────
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   // ── Refs ──────────────────────────────────
-  // Dropdown
-  const dropdownWrapRef = useRef(null); // outer clip wrapper
-  const dropdownPanelRef = useRef(null); // the panel that slides
-  const dropdownCardsRef = useRef(null); // card grid
-  // Mobile
+  const dropdownWrapRef = useRef(null);
+  const dropdownPanelRef = useRef(null);
+  const dropdownCardsRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const mobileOverlayRef = useRef(null);
   const mobileServicesRef = useRef(null);
-  // Timers
   const leaveTimerRef = useRef(null);
   const dropdownInitRef = useRef(false);
+  const countryDropdownRef = useRef(null);
+
+  // ── Close country dropdown on outside click ──
+  useEffect(() => {
+    if (!countryDropdownOpen) return;
+    const handler = (e) => {
+      if (
+        countryDropdownRef.current &&
+        !countryDropdownRef.current.contains(e.target)
+      ) {
+        setCountryDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [countryDropdownOpen]);
 
   // ── Desktop dropdown — shutter init ───────
-  // We use a clip-wrapper approach:
-  // dropdownWrapRef: overflow-hidden, height animated 0→auto (shutter)
-  // dropdownPanelRef: translateY -100%→0 (slide up inside clip)
   useEffect(() => {
     if (!dropdownWrapRef.current || !dropdownPanelRef.current) return;
-    // Hide completely on mount
     gsap.set(dropdownWrapRef.current, { height: 0, overflow: "hidden" });
     gsap.set(dropdownPanelRef.current, { y: "-100%" });
     dropdownInitRef.current = true;
@@ -154,25 +224,21 @@ export default function Navbar() {
     clearTimeout(leaveTimerRef.current);
     setDropdownOpen(true);
 
-    // Kill any running tweens
     gsap.killTweensOf(dropdownWrapRef.current);
     gsap.killTweensOf(dropdownPanelRef.current);
 
-    // Step 1: reveal wrapper height (shutter open)
     gsap.to(dropdownWrapRef.current, {
       height: "auto",
       duration: 0.38,
       ease: "power3.out",
     });
 
-    // Step 2: panel rises into view simultaneously
     gsap.to(dropdownPanelRef.current, {
       y: "0%",
       duration: 0.38,
       ease: "power3.out",
     });
 
-    // Step 3: stagger service cards fade up
     if (dropdownCardsRef.current) {
       gsap.fromTo(
         dropdownCardsRef.current.querySelectorAll(".svc-card"),
@@ -197,7 +263,6 @@ export default function Navbar() {
       gsap.killTweensOf(dropdownWrapRef.current);
       gsap.killTweensOf(dropdownPanelRef.current);
 
-      // Shutter close: panel slides up, wrapper collapses
       gsap.to(dropdownPanelRef.current, {
         y: "-100%",
         duration: 0.26,
@@ -207,7 +272,7 @@ export default function Navbar() {
         height: 0,
         duration: 0.28,
         ease: "power2.in",
-        delay: 0.04, // slight lag so panel exits before clip closes
+        delay: 0.04,
       });
     }, 90);
   };
@@ -289,9 +354,6 @@ export default function Navbar() {
     }
   }, [mobileServicesOpen]);
 
-  const isActive = (href) =>
-    href !== "#" && (pathname === href || pathname.startsWith(href + "/"));
-
   return (
     <>
       {/* ── Announcement bar ── */}
@@ -299,15 +361,69 @@ export default function Navbar() {
         className={`relative z-50 flex items-center justify-center gap-2 py-2.25 px-4 text-[13px] text-gray-800 ${inter.className}`}
         style={{ backgroundColor: "#dff0ea" }}
       >
-        {/* Country flag */}
-        <span
-          className="text-base leading-none select-none"
-          role="img"
-          aria-label={`${country.label} flag`}
-          title={country.label}
-        >
-            <Image src={country.img} alt={`${country.label} flag`} width={20} height={15} />
-        </span>
+        {/* ── Country selector ── */}
+        <div ref={countryDropdownRef} className="relative">
+          <button
+            onClick={() => setCountryDropdownOpen((v) => !v)}
+            className="flex items-center gap-1.5 rounded-md px-1.5 py-0.5 transition-colors hover:bg-black/5"
+            aria-label="Select country"
+            aria-expanded={countryDropdownOpen}
+            aria-haspopup="listbox"
+          >
+            <Image
+              src={country.img}
+              alt={`${country.label} flag`}
+              width={20}
+              height={15}
+              className="rounded-[2px]"
+            />
+            <span className="text-[12px] font-semibold text-gray-700 uppercase tracking-wide">
+              {country.label}
+            </span>
+            <ChevronDown
+              className={`h-3 w-3 text-gray-500 transition-transform duration-200 ${
+                countryDropdownOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {/* Country dropdown panel */}
+          {countryDropdownOpen && (
+            <div
+              className="absolute left-0 top-full z-50 mt-1.5 min-w-[110px] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg"
+              role="listbox"
+              aria-label="Select country"
+            >
+              {Object.entries(COUNTRY_CONFIG).map(([code, cfg]) => (
+                <button
+                  key={code}
+                  role="option"
+                  aria-selected={code === selectedCountry}
+                  onClick={() => handleCountryChange(code)}
+                  className={`flex w-full items-center gap-2 px-3 py-2 text-[13px] font-medium transition-colors hover:bg-gray-50 ${
+                    code === selectedCountry
+                      ? "text-gray-900 bg-gray-50"
+                      : "text-gray-600"
+                  }`}
+                >
+                  <Image
+                    src={cfg.img}
+                    alt={`${cfg.label} flag`}
+                    width={18}
+                    height={13}
+                    className="rounded-[2px]"
+                  />
+                  {cfg.label}
+                  {code === selectedCountry && (
+                    <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#5E7AC4]" />
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Promo text */}
         <span>{country.promoText}</span>
       </div>
 
@@ -317,8 +433,8 @@ export default function Navbar() {
       >
         {/* Nav row */}
         <nav className="mx-auto flex h-17 max-w-350 items-center justify-between px-5 lg:px-10">
-          {/* Logo — LCP fix: loading="eager" + priority */}
-          <Link href="/" className="flex shrink-0 items-center gap-2">
+          {/* Logo */}
+          <Link href={withCountry("/")} className="flex shrink-0 items-center gap-2">
             <Image
               src="/black_logo.png"
               alt="Ethan Duct Cleaning"
@@ -350,7 +466,6 @@ export default function Navbar() {
                     ) : (
                       <ChevronDown className="h-3.5 w-3.5 text-gray-400 transition-transform duration-200" />
                     )}
-                    {/* Active underline */}
                     <span
                       className="absolute -bottom-px left-2 right-2 h-0.5 rounded-full bg-[#5E7AC4] transition-opacity duration-200"
                       style={{ opacity: dropdownOpen ? 1 : 0 }}
@@ -360,7 +475,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={withCountry(link.href)}
                   className="relative flex items-center gap-0.75 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4]"
                 >
                   {link.label}
@@ -378,7 +493,7 @@ export default function Navbar() {
           {/* Right side */}
           <div className="hidden items-center gap-4 lg:flex">
             <Link
-              href="/book"
+              href={withCountry("/book")}
               className="rounded-lg bg-white px-4.5 py-2 text-[18px] font-semibold text-black transition-all duration-200 hover:bg-[#5E7AC4] hover:text-white active:scale-[0.97] active:bg-[#4a63a8]"
             >
               Book online
@@ -405,16 +520,9 @@ export default function Navbar() {
         </nav>
 
         {/* ── Desktop Dropdown — shutter wrapper ── */}
-        {/*
-          Architecture:
-          [dropdownWrapRef]  overflow:hidden, height: 0→auto  ← clips the shutter
-            [dropdownPanelRef]  translateY: -100%→0%           ← slides up into clip
-              [actual dropdown content]
-        */}
         <div
           ref={dropdownWrapRef}
           className="absolute left-0 top-full z-50 w-full"
-          // overflow hidden set via GSAP on mount
           onMouseEnter={() => clearTimeout(leaveTimerRef.current)}
           onMouseLeave={closeDropdown}
           aria-hidden={!dropdownOpen}
@@ -434,18 +542,16 @@ export default function Navbar() {
                   return (
                     <Link
                       key={service.href}
-                      href={service.href}
+                      href={withCountry(service.href)}
                       className="svc-card group flex items-start gap-4 rounded-xl px-5 py-5 transition-colors duration-150 hover:bg-gray-50"
                       onClick={dismissDropdown}
                     >
-                      {/* Circle icon */}
                       <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white transition-colors duration-150 group-hover:border-[#5E7AC4]/40 group-hover:bg-[#5E7AC4]/5">
                         <Icon
                           className="h-4.5 w-4.5 text-gray-600 transition-colors duration-150 group-hover:text-[#5E7AC4]"
                           strokeWidth={1.5}
                         />
                       </div>
-                      {/* Text */}
                       <div className="min-w-0">
                         <p className="text-[14px] font-semibold leading-tight text-gray-900 transition-colors duration-150 group-hover:text-[#5E7AC4]">
                           {service.label}
@@ -462,7 +568,7 @@ export default function Navbar() {
               {/* Contact Us CTA */}
               <div className="mt-7 border-t border-gray-100 pt-5">
                 <Link
-                  href="/contact"
+                  href={withCountry("/contact")}
                   className="inline-flex items-center rounded-lg border border-gray-900 px-4 py-2.25 text-[13px] font-semibold text-gray-900 transition-all duration-200 hover:border-[#5E7AC4] hover:bg-[#5E7AC4] hover:text-white"
                   onClick={dismissDropdown}
                 >
@@ -509,15 +615,28 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Country badge */}
+        {/* Country selector — mobile */}
         <div
           className="flex items-center gap-2 px-5 py-3"
           style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
         >
-          <span className="text-base leading-none">{country.flag}</span>
-          <span className="text-[12px] font-medium text-white/40 uppercase tracking-widest">
-            {country.label}
-          </span>
+          <div className="flex items-center gap-2">
+            {Object.entries(COUNTRY_CONFIG).map(([code, cfg]) => (
+              <button
+                key={code}
+                onClick={() => handleCountryChange(code)}
+                className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] font-medium uppercase tracking-widest transition-colors ${
+                  code === selectedCountry
+                    ? "bg-white/10 text-white"
+                    : "text-white/40 hover:bg-white/5 hover:text-white/70"
+                }`}
+                aria-pressed={code === selectedCountry}
+              >
+                <span className="text-base leading-none">{cfg.flag}</span>
+                {cfg.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Mobile links */}
@@ -550,7 +669,7 @@ export default function Navbar() {
                   return (
                     <Link
                       key={service.href}
-                      href={service.href}
+                      href={withCountry(service.href)}
                       className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] text-white/60 transition-colors hover:bg-white/5 hover:text-white"
                       onClick={() => setMobileOpen(false)}
                     >
@@ -570,7 +689,7 @@ export default function Navbar() {
           {NAV_LINKS.filter((l) => !l.isDropdown).map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={withCountry(link.href)}
               className={`flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${
                 isActive(link.href)
                   ? "bg-white/5 text-[#5E7AC4]"
@@ -592,14 +711,14 @@ export default function Navbar() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
           <Link
-            href="/book"
+            href={withCountry("/book")}
             className="flex w-full items-center justify-center rounded-xl bg-white py-3 text-[15px] font-semibold text-black transition-all duration-200 hover:bg-[#5E7AC4] hover:text-white active:scale-[0.98]"
             onClick={() => setMobileOpen(false)}
           >
             Book online
           </Link>
           <Link
-            href="/contact"
+            href={withCountry("/contact")}
             className="flex w-full items-center justify-center rounded-xl py-3 text-[14px] font-medium text-white/50 transition-colors hover:text-white"
             onClick={() => setMobileOpen(false)}
             style={{ border: "1px solid rgba(255,255,255,0.1)" }}
