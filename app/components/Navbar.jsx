@@ -375,7 +375,7 @@ export default function Navbar() {
               alt={`${country.label} flag`}
               width={20}
               height={15}
-              className="rounded-[2px]"
+              className="rounded-xs"
             />
             <span className="text-[12px] font-semibold text-gray-700 uppercase tracking-wide">
               {country.label}
@@ -390,7 +390,7 @@ export default function Navbar() {
           {/* Country dropdown panel */}
           {countryDropdownOpen && (
             <div
-              className="absolute left-0 top-full z-50 mt-1.5 min-w-[110px] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg"
+              className="absolute left-0 top-full z-50 mt-1.5 min-w-27.5 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg"
               role="listbox"
               aria-label="Select country"
             >
@@ -411,7 +411,7 @@ export default function Navbar() {
                     alt={`${cfg.label} flag`}
                     width={18}
                     height={13}
-                    className="rounded-[2px]"
+                    className="rounded-xs"
                   />
                   {cfg.label}
                   {code === selectedCountry && (
