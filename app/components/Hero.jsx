@@ -104,7 +104,7 @@ export default function Hero() {
         aria-label="Hero — Professional Air Duct and Vent Cleaning Montreal"
         className="relative w-full overflow-hidden"
       >
-        <div className="relative w-full h-80 sm:h-96 md:h-[28rem] lg:h-screen">
+        <div className="relative w-full h-80 sm:h-96 md:h-112 lg:h-screen">
 
           {/* ── Slide backgrounds ── */}
           <div className="absolute inset-0 z-0">
@@ -148,7 +148,7 @@ export default function Hero() {
                   className={`block rounded-full transition-all duration-500 ${
                     i === active
                       ? "h-1.5 w-6 bg-white lg:h-2 lg:w-10"
-                      : "h-1.5 w-1.5 bg-white/[0.35] hover:bg-white/60 lg:h-2 lg:w-2"
+                      : "h-1.5 w-1.5 bg-white/35 hover:bg-white/60 lg:h-2 lg:w-2"
                   }`}
                 />
               </button>
@@ -183,7 +183,7 @@ export default function Hero() {
                     lg  46px  (h-screen — large monitor)
                     xl  56px  (h-screen — wide / hi-res)
               */}
-              <h1 className="hl min-w-0 break-words text-[20px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-[26px] md:text-[32px] lg:text-[46px] xl:text-[56px]">
+              <h1 className="hl min-w-0 wrap-break-words text-[20px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-[26px] md:text-[32px] lg:text-[46px] xl:text-[56px]">
                 Professional{" "}
                 <span className="text-[#5E7AC4]">Air Duct</span>{" "}
                 &amp;{" "}
@@ -201,9 +201,9 @@ export default function Hero() {
                 className={`hl mt-2.5 hidden max-w-xl text-[12px] leading-relaxed text-white/[0.55] sm:block sm:mt-3 sm:text-[12.5px] md:text-[13px] lg:mt-5 lg:max-w-2xl lg:text-[15px] lg:leading-[1.75] xl:text-[16px] ${inter.className}`}
               >
                 Your trusted experts for{" "}
-                <strong className="font-semibold text-white/[0.80]">air duct and vent cleaning</strong>{" "}
+                <strong className="font-semibold text-white/80">air duct and vent cleaning</strong>{" "}
                 across Montreal. We remove dust, debris &amp; allergens to improve{" "}
-                <strong className="font-semibold text-white/[0.80]">indoor air quality</strong>{" "}
+                <strong className="font-semibold text-white/80">indoor air quality</strong>{" "}
                 and HVAC efficiency — for homes and businesses of every size.
               </p>
 
@@ -213,7 +213,7 @@ export default function Hero() {
               <div className="hl mt-4 flex flex-wrap items-center gap-2 sm:mt-4 md:mt-5 lg:mt-8 lg:gap-3 xl:mt-10">
                 <Link
                   href="/contactus"
-                  className="group flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-2.5 text-[12.5px] font-bold text-gray-900 shadow-md transition-all duration-200 hover:-translate-y-px hover:bg-[#5E7AC4] hover:text-white hover:shadow-lg active:translate-y-0 active:scale-[0.97] sm:w-auto sm:justify-start lg:rounded-xl lg:px-7 lg:py-4 lg:text-[15px] xl:px-8 xl:py-[18px] xl:text-[16px]"
+                  className="group flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-2.5 text-[12.5px] font-bold text-gray-900 shadow-md transition-all duration-200 hover:-translate-y-px hover:bg-[#5E7AC4] hover:text-white hover:shadow-lg active:translate-y-0 active:scale-[0.97] sm:w-auto sm:justify-start lg:rounded-xl lg:px-7 lg:py-4 lg:text-[15px] xl:px-8 xl:py-4.5 xl:text-[16px]"
                 >
                   <CalendarCheck className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:scale-110 lg:h-5 lg:w-5" strokeWidth={2} />
                   Get an Appointment
@@ -221,7 +221,7 @@ export default function Hero() {
 
                 <Link
                   href="/contactus"
-                  className="group flex w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-white/[0.08] px-4 py-2.5 text-[12.5px] font-bold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-px hover:border-white/50 hover:bg-white/[0.15] active:translate-y-0 active:scale-[0.97] sm:w-auto sm:justify-start lg:rounded-xl lg:px-7 lg:py-4 lg:text-[15px] xl:px-8 xl:py-[18px] xl:text-[16px]"
+                  className="group flex w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-white/8 px-4 py-2.5 text-[12.5px] font-bold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-px hover:border-white/50 hover:bg-white/15 active:translate-y-0 active:scale-[0.97] sm:w-auto sm:justify-start lg:rounded-xl lg:px-7 lg:py-4 lg:text-[15px] xl:px-8 xl:py-4.5 xl:text-[16px]"
                 >
                   <FileText className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:scale-110 lg:h-5 lg:w-5" strokeWidth={2} />
                   Get a Free Quote
@@ -233,7 +233,7 @@ export default function Hero() {
                 {TRUST.map(({ icon: Icon, text }) => (
                   <div key={text} className="flex items-center gap-2">
                     <Icon className="h-4 w-4 shrink-0 text-white/40 xl:h-5 xl:w-5" strokeWidth={2} />
-                    <span className="text-[12px] font-medium text-white/[0.45] xl:text-[14px]">{text}</span>
+                    <span className="text-[12px] font-medium text-white/45 xl:text-[14px]">{text}</span>
                   </div>
                 ))}
               </div>
@@ -244,7 +244,7 @@ export default function Hero() {
                 larger hero canvas without feeling sparse. */}
             <div
               ref={formRef}
-              className="hidden shrink-0 overflow-hidden lg:block lg:w-[320px] xl:w-[400px]"
+              className="hidden shrink-0 overflow-hidden lg:block lg:w-[320px] xl:w-100"
             >
               <div
                 className="rounded-2xl bg-white lg:p-5 xl:p-7"
