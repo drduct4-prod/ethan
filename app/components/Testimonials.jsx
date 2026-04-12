@@ -290,6 +290,7 @@ export default function TestimonialsSection() {
 
   return (
     <section
+    id="reviews"
       ref={sectionRef}
       aria-labelledby="testimonials-heading"
       className={`relative w-full overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-28 ${urbanist.className}`}

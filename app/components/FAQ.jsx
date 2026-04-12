@@ -56,17 +56,16 @@ const FAQS = [
 // FAQSection
 // ─────────────────────────────────────────────────────────────
 export default function FAQSection() {
-  const sectionRef  = useRef(null);
-  const headingRef  = useRef(null);
-  const listRef     = useRef(null);
-  const imageRef    = useRef(null);
-  const [openId, setOpenId] = useState("faq-1"); // first open by default
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const listRef    = useRef(null);
+  const imageRef   = useRef(null);
+  const [openId, setOpenId] = useState("faq-1");
 
   // ── Scroll-triggered entrance animations ──────────────────
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      // Heading fade-up
       gsap.fromTo(
         headingRef.current?.querySelectorAll(".anim-h"),
         { opacity: 0, y: 36 },
@@ -84,7 +83,6 @@ export default function FAQSection() {
         }
       );
 
-      // FAQ items stagger
       gsap.fromTo(
         listRef.current?.querySelectorAll(".faq-item"),
         { opacity: 0, y: 28 },
@@ -102,7 +100,6 @@ export default function FAQSection() {
         }
       );
 
-      // Image slides in from right — lightweight translateX only
       gsap.fromTo(
         imageRef.current,
         { opacity: 0, x: 48 },
@@ -132,14 +129,21 @@ export default function FAQSection() {
     <section
       ref={sectionRef}
       aria-labelledby="faq-heading"
-      className={`w-full bg-white ${urbanist.className}`}
+      className={`w-full overflow-x-hidden bg-white ${urbanist.className}`}
     >
       <div className="h-px w-full bg-gray-100" />
 
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 md:px-8 lg:px-12 lg:py-24 xl:px-16 xl:py-28">
+      {/* ── Responsive outer padding:
+            mobile  : px-4  py-10
+            sm      : px-6  py-16
+            md      : px-8  py-20
+            lg      : px-12 py-24
+            xl      : px-16 py-28
+      ── */}
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 xl:px-16 xl:py-28">
 
         {/* ── Section heading ── */}
-        <div ref={headingRef} className="mb-10 lg:mb-14">
+        <div ref={headingRef} className="mb-8 sm:mb-10 lg:mb-14">
           <div className="anim-h mb-3 flex items-center gap-3">
             <span className="h-px w-8 bg-[#5E7AC4]" />
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#5E7AC4]">
@@ -148,13 +152,13 @@ export default function FAQSection() {
           </div>
           <h2
             id="faq-heading"
-            className="anim-h max-w-xl text-[26px] font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[48px]"
+            className="anim-h max-w-[18rem] text-[22px] font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:max-w-lg sm:text-[30px] md:text-[36px] lg:max-w-xl lg:text-[42px] xl:text-[48px]"
           >
             Do You Have{" "}
             <span className="text-[#5E7AC4]">Any Questions?</span>
           </h2>
           <p
-            className={`anim-h mt-3 max-w-lg text-[13px] leading-relaxed text-gray-500 sm:text-[14px] lg:mt-4 lg:text-[15px] ${inter.className}`}
+            className={`anim-h mt-3 max-w-[18rem] text-[13px] leading-relaxed text-gray-500 sm:max-w-md sm:text-[14px] lg:mt-4 lg:max-w-lg lg:text-[15px] ${inter.className}`}
           >
             Everything you need to know about our HVAC cleaning and home services.
             Can&apos;t find your answer?{" "}
@@ -167,16 +171,16 @@ export default function FAQSection() {
           </p>
         </div>
 
-        {/* ── Two-column layout ── */}
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
+        {/* ── Two-column layout
+              mobile/sm : single column, FAQ then image
+              md        : single column (wider gap)
+              lg+       : two columns, FAQ left / image right
+        ── */}
+        <div className="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
 
           {/* ── LEFT — FAQ accordion ── */}
           <div ref={listRef} className="w-full min-w-0 flex-1">
 
-            {/*
-              JSON-LD schema — invisible to users, crawlable by Google.
-              Enables FAQ rich results in search.
-            */}
             <script
               type="application/ld+json"
               // eslint-disable-next-line react/no-danger
@@ -193,7 +197,7 @@ export default function FAQSection() {
               }}
             />
 
-            <div className="space-y-3" role="list">
+            <div className="space-y-2.5 sm:space-y-3" role="list">
               {FAQS.map((faq, i) => (
                 <FAQItem
                   key={faq.id}
@@ -205,38 +209,43 @@ export default function FAQSection() {
               ))}
             </div>
 
-            {/* Bottom CTA */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            {/* Bottom CTA
+                mobile  : stacked column, full-width primary button
+                sm+     : row layout, auto-width buttons
+            */}
+            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
               <Link
                 href="/quote"
-                className="group flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-[13px] font-bold text-white transition-all duration-200 hover:bg-[#5E7AC4] sm:justify-start lg:px-7 lg:py-3.5 lg:text-[14px]"
+                className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-[13px] font-bold text-white transition-all duration-200 hover:bg-[#5E7AC4] sm:w-auto sm:justify-start lg:px-7 lg:py-3.5 lg:text-[14px]"
               >
                 Get a Free Quote
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/contact"
-                className={`flex items-center justify-center gap-2 text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900 sm:justify-start ${inter.className}`}
+                className={`flex min-h-[44px] items-center justify-center gap-2 text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900 sm:justify-start ${inter.className}`}
               >
-                <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
+                <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={1.75} />
                 Or contact us directly
               </Link>
             </div>
           </div>
 
-          {/* ── RIGHT — image panel ── */}
+          {/* ── RIGHT — image panel
+                mobile/sm : full width, landscape-ish aspect ratio (avoids tall portrait)
+                md        : full width, taller ratio
+                lg+       : fixed column width, portrait ratio
+          ── */}
           <div
             ref={imageRef}
             className="w-full shrink-0 lg:w-[42%] xl:w-[44%]"
           >
             <div
-              className="relative w-full overflow-hidden rounded-2xl bg-gray-100"
+              className="relative w-full overflow-hidden rounded-2xl bg-gray-100 aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/11] lg:aspect-[4/5]"
               style={{
-                aspectRatio: "4/5",
                 boxShadow: "0 2px 4px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.10)",
               }}
             >
-              {/* Replace /faq-image.jpg with your actual image */}
               <Image
                 src="/services_images/faq_image.jpg"
                 alt="Professional HVAC and duct cleaning service technician — Impeccable Solution Montreal"
@@ -246,7 +255,7 @@ export default function FAQSection() {
                 onError={(e) => { e.currentTarget.style.display = "none"; }}
               />
 
-              {/* Fallback gradient shown when image not yet added */}
+              {/* Fallback gradient */}
               <div
                 className="absolute inset-0 -z-10"
                 style={{
@@ -257,7 +266,7 @@ export default function FAQSection() {
 
               {/* Floating glass card — bottom-left */}
               <div
-                className="absolute bottom-5 left-5 right-5 rounded-xl p-4 sm:bottom-6 sm:left-6 sm:right-6 sm:p-5"
+                className="absolute bottom-4 left-4 right-4 rounded-xl p-3.5 sm:bottom-5 sm:left-5 sm:right-5 sm:p-4 md:bottom-6 md:left-6 md:right-6 md:p-5"
                 style={{
                   background: "rgba(255,255,255,0.10)",
                   backdropFilter: "blur(16px)",
@@ -265,10 +274,10 @@ export default function FAQSection() {
                   border: "1px solid rgba(255,255,255,0.18)",
                 }}
               >
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 sm:text-[12px]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 sm:text-[11px] md:text-[12px]">
                   Why choose us?
                 </p>
-                <div className="mt-3 grid grid-cols-2 gap-y-2 gap-x-4">
+                <div className="mt-2.5 grid grid-cols-2 gap-y-2 gap-x-3 sm:mt-3 sm:gap-x-4">
                   {[
                     "NADCA Certified",
                     "Licensed & Insured",
@@ -276,8 +285,8 @@ export default function FAQSection() {
                     "24 hr response",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-1.5">
-                      <span className="h-1 w-1 rounded-full bg-[#5E7AC4] shrink-0" />
-                      <span className={`text-[11px] font-medium text-white/80 sm:text-[12px] ${inter.className}`}>
+                      <span className="h-1 w-1 shrink-0 rounded-full bg-[#5E7AC4]" />
+                      <span className={`text-[10px] font-medium text-white/80 sm:text-[11px] md:text-[12px] ${inter.className}`}>
                         {item}
                       </span>
                     </div>
@@ -294,20 +303,16 @@ export default function FAQSection() {
 }
 
 // ─────────────────────────────────────────────────────────────
-// FAQItem — isolated accordion item with CSS height transition
-// Using CSS max-height for the smoothest possible performance
-// (no GSAP per-item to keep mobile fast & lag-free)
+// FAQItem — isolated accordion item with GSAP height transition
 // ─────────────────────────────────────────────────────────────
 function FAQItem({ faq, index, isOpen, onToggle }) {
   const answerRef = useRef(null);
 
-  // Animate height with GSAP for pixel-perfect smoothness
   useEffect(() => {
     const el = answerRef.current;
     if (!el) return;
 
     if (isOpen) {
-      // Measure real height then animate to it
       gsap.set(el, { height: "auto", overflow: "hidden" });
       const h = el.offsetHeight;
       gsap.fromTo(
@@ -344,26 +349,26 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
           transition: "box-shadow 0.25s ease, background 0.25s ease",
         }}
       >
-        {/* Question button — fully accessible */}
+        {/* Question button — min 48px height for touch-friendly targets */}
         <button
           onClick={() => onToggle(faq.id)}
           aria-expanded={isOpen}
           aria-controls={`${faq.id}-answer`}
           id={`${faq.id}-btn`}
-          className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-4.5 lg:py-5"
+          className="flex min-h-[52px] w-full items-center justify-between gap-3 px-4 py-3.5 text-left sm:min-h-[auto] sm:gap-4 sm:px-5 sm:py-4 md:px-6 lg:py-5"
         >
           <h3
-            className="text-[13.5px] font-bold leading-snug text-gray-900 sm:text-[14px] lg:text-[15px]"
+            className="text-[13px] font-bold leading-snug text-gray-900 sm:text-[13.5px] lg:text-[15px]"
             itemProp="name"
           >
             {faq.question}
           </h3>
 
-          {/* Rotating icon — CSS only, no GSAP, max performance */}
+          {/* Icon — visually 28px, but touch area is covered by the full button row */}
           <span
-            className="cursor-pointer flex h-7 w-7 shrink-0 items-center justify-center rounded transition-colors duration-200"
+            className="flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded transition-colors duration-200"
             style={{
-              background: isOpen ? "rgba(0,0,0,0.05)" : "rgba(0,0,0,0.05)",
+              background: "rgba(0,0,0,0.05)",
             }}
             aria-hidden="true"
           >
@@ -387,7 +392,7 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
           itemType="https://schema.org/Answer"
         >
           <p
-            className={`px-5 pb-5 text-[13px] leading-relaxed text-gray-500 sm:px-6 sm:pb-5 lg:text-[13.5px] ${inter.className}`}
+            className={`px-4 pb-4 text-[13px] leading-relaxed text-gray-500 sm:px-5 sm:pb-5 md:px-6 lg:text-[13.5px] ${inter.className}`}
             itemProp="text"
           >
             {faq.answer}

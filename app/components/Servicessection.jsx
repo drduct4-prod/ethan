@@ -196,6 +196,7 @@ export default function ServicesSection() {
 
   return (
     <section
+    id="what-we-do"
       ref={sectionRef}
       aria-labelledby="services-heading"
       className={`w-full bg-white ${urbanist.className}`}

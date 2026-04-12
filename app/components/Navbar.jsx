@@ -95,12 +95,11 @@ const SERVICES = [
 ];
 
 // Base hrefs — country prefix is applied via withCountry()
+// isAnchor: true → smooth-scroll to section id, no page navigation
 const NAV_LINKS = [
   { label: "Services", href: "#", isDropdown: true },
-  { label: "Who we serve", href: "/who-we-serve", hasChevron: true },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Reviews", href: "/reviews" },
-  { label: "About", href: "/about", hasChevron: true },
+  { label: "What We Do", href: "#what-we-do", isAnchor: true },
+  { label: "Reviews", href: "#reviews", isAnchor: true },
 ];
 
 // ─────────────────────────────────────────────
@@ -162,9 +161,10 @@ export default function Navbar() {
   );
 
   // ── Link helper — prefix every path with active country ──
+  // Anchor hrefs (starting with #) are passed through unchanged
   const withCountry = useCallback(
     (href) => {
-      if (!href || href === "#" || href.startsWith("http")) return href;
+      if (!href || href === "#" || href.startsWith("http") || href.startsWith("#")) return href;
       return `/${selectedCountry}${href}`;
     },
     [selectedCountry],
@@ -173,12 +173,23 @@ export default function Navbar() {
   // ── Active-link check (country-aware) ────
   const isActive = useCallback(
     (href) => {
-      if (href === "#") return false;
+      if (href === "#" || href.startsWith("#")) return false;
       const prefixed = withCountry(href);
       return pathname === prefixed || pathname.startsWith(prefixed + "/");
     },
     [pathname, withCountry],
   );
+
+  // ── Anchor scroll handler ─────────────────
+  // Smoothly scrolls to the section with matching id, closes mobile menu if open
+  const handleAnchorClick = useCallback((e, href) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
 
   // ── UI state ──────────────────────────────
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -356,6 +367,14 @@ export default function Navbar() {
 
   return (
     <>
+      {/* ── Animated sweep line keyframes ── */}
+      <style>{`
+        @keyframes navLineSweep {
+          0%   { left: -55%; }
+          100% { left: 160%; }
+        }
+      `}</style>
+
       {/* ── Announcement bar ── */}
       <div
         className={`relative z-50 flex items-center justify-center gap-2 py-2.25 px-4 text-[13px] text-gray-800 ${inter.className}`}
@@ -472,6 +491,15 @@ export default function Navbar() {
                     />
                   </button>
                 </div>
+              ) : link.isAnchor ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
+                  className="relative flex items-center gap-0.75 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4] cursor-pointer"
+                >
+                  {link.label}
+                </a>
               ) : (
                 <Link
                   key={link.href}
@@ -493,7 +521,7 @@ export default function Navbar() {
           {/* Right side */}
           <div className="hidden items-center gap-4 lg:flex">
             <Link
-              href={withCountry("/book")}
+              href={("/contactus")}
               className="rounded-lg bg-white px-4.5 py-2 text-[18px] font-semibold text-black transition-all duration-200 hover:bg-[#5E7AC4] hover:text-white active:scale-[0.97] active:bg-[#4a63a8]"
             >
               Book online
@@ -568,7 +596,7 @@ export default function Navbar() {
               {/* Contact Us CTA */}
               <div className="mt-7 border-t border-gray-100 pt-5">
                 <Link
-                  href={withCountry("/contact")}
+                  href={("/contactus")}
                   className="inline-flex items-center rounded-lg border border-gray-900 px-4 py-2.25 text-[13px] font-semibold text-gray-900 transition-all duration-200 hover:border-[#5E7AC4] hover:bg-[#5E7AC4] hover:text-white"
                   onClick={dismissDropdown}
                 >
@@ -577,6 +605,34 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* ── Animated sweep line — absolutely positioned at navbar bottom ── */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "1px",
+            overflow: "hidden",
+            pointerEvents: "none",
+            zIndex: 1,
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              height: "100%",
+              width: "55%",
+              background:
+                "linear-gradient(90deg, transparent 0%, #5E7AC4 35%, #7b96d4 50%, #5E7AC4 65%, transparent 100%)",
+              boxShadow: "0 0 8px #5E7AC4, 0 0 16px #5E7AC480",
+              animation: "navLineSweep 2s linear infinite",
+            }}
+          />
         </div>
       </header>
 
@@ -686,23 +742,37 @@ export default function Navbar() {
           </div>
 
           {/* Other nav links */}
-          {NAV_LINKS.filter((l) => !l.isDropdown).map((link) => (
-            <Link
-              key={link.href}
-              href={withCountry(link.href)}
-              className={`flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${
-                isActive(link.href)
-                  ? "bg-white/5 text-[#5E7AC4]"
-                  : "text-white/80 hover:bg-white/5 hover:text-white"
-              }`}
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-              {link.hasChevron && (
-                <ChevronDown className="h-3.5 w-3.5 text-white/30" />
-              )}
-            </Link>
-          ))}
+          {NAV_LINKS.filter((l) => !l.isDropdown).map((link) =>
+            link.isAnchor ? (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => {
+                  handleAnchorClick(e, link.href);
+                  setMobileOpen(false);
+                }}
+                className="flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white cursor-pointer"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={withCountry(link.href)}
+                className={`flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${
+                  isActive(link.href)
+                    ? "bg-white/5 text-[#5E7AC4]"
+                    : "text-white/80 hover:bg-white/5 hover:text-white"
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+                {link.hasChevron && (
+                  <ChevronDown className="h-3.5 w-3.5 text-white/30" />
+                )}
+              </Link>
+            ),
+          )}
         </div>
 
         {/* Mobile footer CTA */}
@@ -711,7 +781,7 @@ export default function Navbar() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
           <Link
-            href={withCountry("/book")}
+            href={withCountry("/contact-us")}
             className="flex w-full items-center justify-center rounded-xl bg-white py-3 text-[15px] font-semibold text-black transition-all duration-200 hover:bg-[#5E7AC4] hover:text-white active:scale-[0.98]"
             onClick={() => setMobileOpen(false)}
           >
