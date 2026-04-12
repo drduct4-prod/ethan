@@ -67,20 +67,20 @@ export default function AirExchangerCleaning() {
             <div className="hero-text inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#5E7AC4] animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#5E7AC4]">
-                HRV & ERV Maintenance Experts
+                Professional HRV & ERV Maintenance
               </span>
             </div>
 
             <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
-              Pure Oxygen. <span className="text-[#5E7AC4]">Balanced.</span>
+              Fresh Air. <span className="text-[#5E7AC4]">Reimagined.</span>
               <br />
-              Core Efficiency.
+              Peak IAQ Performance.
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              We specialize in deep-cleaning Heat Recovery Ventilators. By
-              decontaminating the core and filters, we ensure your home
-              exchanges stale air for crisp, outdoor purity.
+              We specialize in deep-cleaning Fresh Air Ventilation systems. By 
+              optimizing your HRV/ERV core, we ensure your home breathes 
+              filtered, oxygen-rich air while exhausting indoor pollutants.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
@@ -88,7 +88,7 @@ export default function AirExchangerCleaning() {
                 href="/book"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
-                Schedule HRV Service <ArrowRight className="h-5 w-5" />
+                Book Your Service <ArrowRight className="h-5 w-5" />
               </Link>
               <div className="flex items-center gap-4 px-2">
                 <div className="flex -space-x-3">
@@ -102,7 +102,7 @@ export default function AirExchangerCleaning() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-gray-500 italic">
-                  Certified Air Exchange Techs
+                  Certified Indoor Air Quality Experts
                 </p>
               </div>
             </div>
@@ -116,12 +116,12 @@ export default function AirExchangerCleaning() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Optimizing Your Recovery Core
+                Restore Your System's Core Efficiency
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                A neglected air exchanger can become a source of humidity and
-                pollutants. Our process restores your system to factory-spec
-                performance.
+                A dirty air exchanger doesn't just waste energy—it traps 
+                stale air and allergens inside. Our specialized cleaning 
+                restores factory-spec ventilation to your home.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -129,22 +129,22 @@ export default function AirExchangerCleaning() {
                 {
                   icon: ThermometerSnowflake,
                   t: "Thermal Recovery",
-                  d: "Clean cores transfer heat up to 30% more effectively during extreme weather.",
+                  d: "Clean energy-recovery cores transfer temperature up to 30% more efficiently during peak seasons.",
                 },
                 {
                   icon: Filter,
-                  t: "HEPA Filtration",
-                  d: "Deep cleaning of intake screens and replacement of internal filters for maximum purity.",
+                  t: "Advanced Filtration",
+                  d: "Deep cleaning of intake screens and HEPA-grade filter replacement for maximum particle capture.",
                 },
                 {
                   icon: Gauge,
-                  t: "Airflow Balancing",
-                  d: "We calibrate supply and exhaust fans to maintain neutral house pressure.",
+                  t: "Pressure Balancing",
+                  d: "We calibrate supply and exhaust fans to ensure your home maintains proper neutral pressure.",
                 },
                 {
                   icon: Sparkles,
-                  t: "Pathogen Removal",
-                  d: "Anti-microbial treatment of the drainage system to eliminate stagnant odors.",
+                  t: "Odor & Bio-Control",
+                  d: "Full antimicrobial treatment of drainage pans and traps to eliminate mold and stagnant odors.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -163,10 +163,10 @@ export default function AirExchangerCleaning() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Our Engineering Approach
+              Our Professional Protocol
             </h2>
             <p className="text-gray-500 text-lg">
-              Beyond a simple wipe-down; we perform a full system reset.
+              We don't just "dust" the unit; we perform a comprehensive engineering reset.
             </p>
           </div>
 
@@ -174,28 +174,28 @@ export default function AirExchangerCleaning() {
             {[
               {
                 n: "01",
-                t: "Diagnosis",
-                d: "Checking motor amps and static pressure.",
+                t: "Diagnostic",
+                d: "Testing motor amperage and measuring static air pressure.",
               },
               {
                 n: "02",
-                t: "Core Wash",
-                d: "Chemical-free ultrasonic or manual wash.",
+                t: "Core Sanitization",
+                d: "Specialized chemical-free deep wash of the recovery core.",
               },
               {
                 n: "03",
-                t: "Vent Clear",
-                d: "Clearing debris from outside intake hoods.",
+                t: "Intake Clear",
+                d: "Removing debris from exterior hoods for unobstructed flow.",
               },
               {
                 n: "04",
                 t: "Disinfect",
-                d: "EPA-approved fogging of the unit cabinet.",
+                d: "EPA-approved sanitization of the internal cabinet walls.",
               },
               {
                 n: "05",
                 t: "Calibration",
-                d: "Final balancing for optimal air change.",
+                d: "Final balancing of CFMs for optimal air exchange rates.",
               },
             ].map((step, i) => (
               <div
@@ -224,15 +224,15 @@ export default function AirExchangerCleaning() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-                  Performance <br />
-                  <span className="text-[#5E7AC4]">Guaranteed.</span>
+                  Pure Performance. <br />
+                  <span className="text-[#5E7AC4]">Every Breath.</span>
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Core decontamination by certified technicians",
-                    "Full drainage and trap system flush",
-                    "Detailed airflow measurement reports",
-                    "Energy efficiency verification",
+                    "Full core decontamination by licensed techs",
+                    "Complete drainage system flush and clear",
+                    "Airflow measurement and performance reports",
+                    "Energy savings verification and verification",
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="h-6 w-6 rounded-full bg-[#5E7AC4]/20 flex items-center justify-center">
@@ -243,7 +243,7 @@ export default function AirExchangerCleaning() {
                   ))}
                 </div>
                 <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
-                  Learn about ERV/HRV
+                  View Our Service Packages
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
@@ -253,7 +253,7 @@ export default function AirExchangerCleaning() {
                 <div className="absolute inset-0 bg-gray-800 animate-pulse" />
                 <Image
                   src="/images/air-exchanger-cleaning.jpg"
-                  alt="Air Exchanger Service"
+                  alt="Professional Air Exchanger Service"
                   fill
                   className="object-cover"
                 />

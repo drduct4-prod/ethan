@@ -67,20 +67,20 @@ export default function CentralVacuumCleaningPage() {
             <div className="hero-text inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#5E7AC4] animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#5E7AC4]">
-                In-Wall Piping Specialists
+                Certified Built-In Vacuum Specialists
               </span>
             </div>
 
             <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
-              Maximum <span className="text-[#5E7AC4]">Suction.</span>
+              Peak <span className="text-[#5E7AC4]">Suction.</span>
               <br />
-              Wall-to-Wall Clean.
+              Deep Wall Cleaning.
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              Over time, dust and debris build up inside your central vacuum's
-              hidden pipes, reducing airflow and spreading allergens. We perform
-              a complete system purge to restore 100% factory suction.
+              Hidden debris in your central vacuum's piping reduces efficiency 
+              and harbor allergens. We provide a complete professional system 
+              purge to restore 100% factory-level performance.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
@@ -88,7 +88,7 @@ export default function CentralVacuumCleaningPage() {
                 href="/book"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
-                Restore Suction Now <ArrowRight className="h-5 w-5" />
+                Restore My Suction <ArrowRight className="h-5 w-5" />
               </Link>
               <div className="flex items-center gap-4 px-2">
                 <div className="flex -space-x-3">
@@ -102,7 +102,7 @@ export default function CentralVacuumCleaningPage() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-gray-500 italic">
-                  Trusted Central Vac Maintenance
+                  Serving Premium Homes Nationwide
                 </p>
               </div>
             </div>
@@ -116,35 +116,35 @@ export default function CentralVacuumCleaningPage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Hidden Pipes, Hidden Dust
+                Hidden Lines, Invisible Dust
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Most homeowners forget the miles of piping behind their walls.
-                Static electricity causes fine dust to cling to these pipes,
-                creating "slugs" that eventually block the system.
+                Miles of piping behind your walls can accumulate fine dust 
+                due to static electricity. This buildup restricts airflow, 
+                strains your motor, and reduces your vacuum’s lifespan.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
               {[
                 {
                   icon: Activity,
-                  t: "Suction Restoration",
-                  d: "Removing pipe friction allows your motor to pull debris from the furthest inlet with ease.",
+                  t: "Performance Recovery",
+                  d: "Eliminating internal pipe friction allows your power unit to pull debris from every inlet effortlessly.",
                 },
                 {
                   icon: Search,
-                  t: "Blockage Detection",
-                  d: "Professional camera inspection to find and remove toys, hair clogs, or construction debris.",
+                  t: "Blockage Diagnostics",
+                  d: "High-resolution camera inspections to locate and clear deep clogs, hairballs, or construction debris.",
                 },
                 {
                   icon: Trash2,
-                  t: "Canister Decon",
-                  d: "Deep cleaning and sanitizing the main power unit and HEPA filtration assembly.",
+                  t: "Power Unit Service",
+                  d: "Complete sanitization of the main canister and expert servicing of the HEPA filtration system.",
                 },
                 {
                   icon: Focus,
-                  t: "Inlet Service",
-                  d: "Testing and sealing every wall valve to ensure zero vacuum pressure loss.",
+                  t: "Inlet Seal Integrity",
+                  d: "Testing and re-sealing every wall valve to ensure zero air-pressure leaks throughout the home.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -163,11 +163,10 @@ export default function CentralVacuumCleaningPage() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              The System Purge Process
+              Our Multi-Point Purge Process
             </h2>
             <p className="text-gray-500 text-lg">
-              We use specialized "tornado" nozzles to scrub your pipes from the
-              inside out.
+              We utilize professional-grade pneumatic tools to scrub your lines from the inside out.
             </p>
           </div>
 
@@ -175,28 +174,28 @@ export default function CentralVacuumCleaningPage() {
             {[
               {
                 n: "01",
-                t: "Map",
-                d: "Identifying all inlets and the main trunk line path.",
+                t: "Mapping",
+                d: "Locating all wall inlets and identifying the primary trunk line.",
               },
               {
                 n: "02",
-                t: "Analyze",
-                d: "Digital vacuum pressure test at every port.",
+                t: "Pressure Test",
+                d: "Digital vacuum gauge testing at every port to baseline performance.",
               },
               {
                 n: "03",
-                t: "Purge",
-                d: "High-pressure mechanical scrubbing of in-wall pipes.",
+                t: "The Purge",
+                d: "High-velocity mechanical scrubbing of all in-wall piping systems.",
               },
               {
                 n: "04",
-                t: "Filter",
-                d: "Deep cleaning or replacing the power unit filters.",
+                t: "Filter Care",
+                d: "Deep-cleaning or replacing specialized motor and exhaust filters.",
               },
               {
                 n: "05",
-                t: "Verify",
-                d: "Final CFM (Cubic Feet/Min) airflow certification.",
+                t: "Certification",
+                d: "Final airflow verification and system performance reporting.",
               },
             ].map((step, i) => (
               <div
@@ -230,10 +229,10 @@ export default function CentralVacuumCleaningPage() {
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Complete internal pipe decontamination",
-                    "Motor brushes and belt inspection",
-                    "Wall inlet gasket and seal repair",
-                    "Disinfection of hoses and attachments",
+                    "Complete in-wall pipe decontamination",
+                    "Professional motor and belt inspection",
+                    "Gasket and seal replacement for wall inlets",
+                    "Sanitization of all hoses and floor tools",
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="h-6 w-6 rounded-full bg-[#5E7AC4]/20 flex items-center justify-center">
@@ -244,7 +243,7 @@ export default function CentralVacuumCleaningPage() {
                   ))}
                 </div>
                 <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
-                  Book System Cleaning
+                  Schedule Your System Purge
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
@@ -254,7 +253,7 @@ export default function CentralVacuumCleaningPage() {
                 <div className="absolute inset-0 bg-linear-to-br from-[#5E7AC4]/20 to-transparent" />
                 <Image
                   src="/images/central-vac-service.jpg"
-                  alt="Central Vacuum Maintenance"
+                  alt="Professional Central Vacuum System Maintenance"
                   fill
                   className="object-cover opacity-90"
                 />

@@ -67,20 +67,20 @@ export default function HeatPumpCleaningPage() {
             <div className="hero-text inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#5E7AC4] animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#5E7AC4]">
-                Advanced HVAC Performance
+                High-Efficiency Heat Pump Care
               </span>
             </div>
 
             <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
-              Peak <span className="text-[#5E7AC4]">Efficiency.</span>
+              Peak <span className="text-[#5E7AC4]">BTU Output.</span>
               <br />
-              All-Season Comfort.
+              Lower Monthly Costs.
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              Don't let dirt drive up your energy bills. Our deep-coil cleaning
-              and system calibration ensure your heat pump delivers maximum BTU
-              output with minimum power consumption.
+              Don't let grime drive up your utility bills. Our professional 
+              deep-coil sanitization and system calibration ensure your heat pump 
+              runs at factory-spec efficiency all year round.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
@@ -88,7 +88,7 @@ export default function HeatPumpCleaningPage() {
                 href="/book"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
-                Schedule Tune-Up <ArrowRight className="h-5 w-5" />
+                Schedule System Tune-Up <ArrowRight className="h-5 w-5" />
               </Link>
               <div className="flex items-center gap-4 px-2">
                 <div className="flex -space-x-3">
@@ -102,7 +102,7 @@ export default function HeatPumpCleaningPage() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-gray-500 italic">
-                  Save up to 25% on Energy Bills
+                  Save up to 25% on Heating & Cooling
                 </p>
               </div>
             </div>
@@ -116,35 +116,35 @@ export default function HeatPumpCleaningPage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                The Power of a Clean System
+                Protect Your HVAC Investment
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Heat pumps rely on airflow and heat exchange. Even a thin layer
-                of grime on your coils can force the compressor to work twice as
-                hard, leading to premature failure.
+                Heat pumps rely on seamless heat exchange. Even a thin layer 
+                of oxidation or dust on your coils forces the compressor to work 
+                twice as hard, leading to sky-high bills and premature equipment failure.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
               {[
                 {
                   icon: Droplets,
-                  t: "Chemical Coil Wash",
-                  d: "Removing oxidation and buildup from evaporator coils for better heat transfer.",
+                  t: "Eco-Chemical Coil Wash",
+                  d: "Precision removal of organic buildup from evaporator coils to maximize thermal transfer rates.",
                 },
                 {
                   icon: Wind,
-                  t: "Airflow Optimization",
-                  d: "Deep cleaning blower wheels and fans to ensure consistent temperature distribution.",
+                  t: "Blower Wheel Deep-Clean",
+                  d: "Extending motor life by balancing airflow and removing heavy dust from internal fan blades.",
                 },
                 {
                   icon: Activity,
-                  t: "Component Testing",
-                  d: "Proactive checking of capacitors and contactors to prevent emergency breakdowns.",
+                  t: "Component Integrity Test",
+                  d: "Advanced diagnostic checking of capacitors, contactors, and relays to prevent emergency outages.",
                 },
                 {
                   icon: Settings2,
-                  t: "Fin Straightening",
-                  d: "Repairing bent condenser fins to restore aerodynamic cooling efficiency.",
+                  t: "Fin Comb Alignment",
+                  d: "Manually repairing bent condenser fins to restore aerodynamic cooling and prevent hotspots.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -163,11 +163,10 @@ export default function HeatPumpCleaningPage() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Our 5-Point Tune-Up
+              Our 5-Point Performance Audit
             </h2>
             <p className="text-gray-500 text-lg">
-              A comprehensive service designed for both indoor and outdoor
-              units.
+              A comprehensive engineering reset for both indoor air handlers and outdoor condenser units.
             </p>
           </div>
 
@@ -175,28 +174,28 @@ export default function HeatPumpCleaningPage() {
             {[
               {
                 n: "01",
-                t: "Scan",
-                d: "Infrared thermal imaging of the coils.",
+                t: "Thermal Scan",
+                d: "Infrared imaging to detect restricted refrigerant flow or coil hot-spots.",
               },
               {
                 n: "02",
-                t: "Degrease",
-                d: "Applying eco-friendly foaming coil cleaners.",
+                t: "De-Greasing",
+                d: "Applying professional-grade foaming agents to dissolve hidden grime.",
               },
               {
                 n: "03",
-                t: "Flush",
-                d: "High-pressure clearing of condensate drains.",
+                t: "Line Flush",
+                d: "High-pressure clearing of condensate drains to prevent water damage and leaks.",
               },
               {
                 n: "04",
-                t: "Verify",
-                d: "Testing refrigerant levels and pressures.",
+                t: "Level Verify",
+                d: "Checking refrigerant pressures and sub-cooling levels for optimal cycle times.",
               },
               {
                 n: "05",
-                t: "Calibrate",
-                d: "Optimizing thermostat and cycle times.",
+                t: "Calibration",
+                d: "Synchronizing thermostat logic with unit operation for precision comfort.",
               },
             ].map((step, i) => (
               <div
@@ -225,15 +224,15 @@ export default function HeatPumpCleaningPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-                  Extend Your <br />
-                  <span className="text-[#5E7AC4]">Unit's Life.</span>
+                  Maximize Your <br />
+                  <span className="text-[#5E7AC4]">Unit's Lifespan.</span>
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Priority scheduling for seasonal maintenance",
-                    "Multi-point safety & electrical inspection",
-                    "Before/After efficiency benchmark report",
-                    "100% Satisfaction or your money back",
+                    "Priority seasonal scheduling for maintenance members",
+                    "Comprehensive safety and electrical hazard audit",
+                    "Before/After efficiency benchmark performance report",
+                    "100% Performance guarantee on all service calls",
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="h-6 w-6 rounded-full bg-[#5E7AC4]/20 flex items-center justify-center">
@@ -244,7 +243,7 @@ export default function HeatPumpCleaningPage() {
                   ))}
                 </div>
                 <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
-                  View Pricing Packages
+                  View Service & Pricing Plans
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
@@ -254,7 +253,7 @@ export default function HeatPumpCleaningPage() {
                 <div className="absolute inset-0 bg-linear-to-br from-[#5E7AC4]/10 to-transparent" />
                 <Image
                   src="/images/heat-pump-service.jpg"
-                  alt="Heat Pump Cleaning Process"
+                  alt="Professional Heat Pump Cleaning and Maintenance"
                   fill
                   className="object-cover opacity-90"
                 />

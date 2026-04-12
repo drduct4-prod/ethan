@@ -67,20 +67,20 @@ export default function FurnaceBlowerCleaningPage() {
             <div className="hero-text inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#5E7AC4] animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#5E7AC4]">
-                Precision Motor Maintenance
+                Precision Motor Engineering
               </span>
             </div>
 
             <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
               Quiet Power. <span className="text-[#5E7AC4]">Restored.</span>
               <br />
-              Blower Precision.
+              Mechanical Precision.
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              A dirty blower wheel can reduce airflow by up to 30% and cause
-              motor burnout. We perform deep-fin cleaning and lubrication to
-              keep your furnace running silently and efficiently.
+              A dirty blower wheel reduces airflow by 30% and is the leading cause 
+              of motor burnout. We perform deep-fin restoration and balance 
+              calibration to keep your system silent and efficient.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
@@ -88,7 +88,7 @@ export default function FurnaceBlowerCleaningPage() {
                 href="/book"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
-                Schedule Blower Service <ArrowRight className="h-5 w-5" />
+                Book Blower Service <ArrowRight className="h-5 w-5" />
               </Link>
               <div className="flex items-center gap-4 px-2">
                 <div className="flex -space-x-3">
@@ -102,7 +102,7 @@ export default function FurnaceBlowerCleaningPage() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-gray-500 italic">
-                  Extending Furnace Life by Years
+                  Preventing Expensive Motor Burnouts
                 </p>
               </div>
             </div>
@@ -116,35 +116,35 @@ export default function FurnaceBlowerCleaningPage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                The Heart of Your HVAC
+                The Core of Your Air Delivery
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                The blower assembly is responsible for pushing air through your
-                entire home. Dirt on the blades creates drag, imbalance, and
-                mechanical stress.
+                The blower assembly is the heart that pumps air through your vents. 
+                Accumulated dust on the "squirrel cage" creates drag and centrifugal 
+                imbalance, leading to mechanical failure.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
               {[
                 {
                   icon: RotateCw,
-                  t: "CFM Recovery",
-                  d: "Cleaning 'squirrel cage' fins restores full Cubic Feet per Minute airflow capacity.",
+                  t: "CFM Flow Recovery",
+                  d: "Cleaning each individual fin restores the factory-spec Cubic Feet per Minute (CFM) output.",
                 },
                 {
                   icon: Volume2,
-                  t: "Noise Reduction",
-                  d: "Eliminates the humming and vibration caused by unbalanced, dust-heavy blower wheels.",
+                  t: "Vibration Dampening",
+                  d: "Eliminates humming and structural rattling caused by dust-weighted, unbalanced blower wheels.",
                 },
                 {
                   icon: Zap,
-                  t: "Motor Longevity",
-                  d: "Reducing drag lowers the motor's operating temperature, preventing electrical shorts.",
+                  t: "Amp Draw Reduction",
+                  d: "Reducing mechanical drag lowers the motor’s energy consumption and operating temperature.",
                 },
                 {
                   icon: Gauge,
-                  t: "Static Pressure Fix",
-                  d: "Optimizes the pressure across your heat exchanger to prevent system cycling.",
+                  t: "Static Pressure Control",
+                  d: "Properly balanced airflow prevents the heat exchanger from overheating and short-cycling.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -163,10 +163,10 @@ export default function FurnaceBlowerCleaningPage() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Technical Cleaning Process
+              Our Disassembly & Clean Process
             </h2>
             <p className="text-gray-500 text-lg">
-              We don't just spray; we disassemble and restore.
+              We don't just surface-clean; we extract, scrub, and recalibrate.
             </p>
           </div>
 
@@ -174,28 +174,28 @@ export default function FurnaceBlowerCleaningPage() {
             {[
               {
                 n: "01",
-                t: "Isolate",
-                d: "Full power cut and electrical safety check.",
+                t: "Safety Lock",
+                d: "Disconnecting high-voltage leads and verifying electrical isolation.",
               },
               {
                 n: "02",
-                t: "Extract",
-                d: "Removing the entire blower assembly unit.",
+                t: "Extraction",
+                d: "Complete removal of the blower housing and motor assembly from the furnace.",
               },
               {
                 n: "03",
-                t: "Deep Clean",
-                d: "Manual brushing of every single fan blade.",
+                t: "Fin Scrub",
+                d: "Manual cleaning of every single 'squirrel cage' blade for 100% dust removal.",
               },
               {
                 n: "04",
-                t: "Lube",
-                d: "Oiling motor bearings (if applicable) and shafts.",
+                t: "Bearing Care",
+                d: "Lubricating motor shafts and checking capacitor ratings for startup health.",
               },
               {
                 n: "05",
-                t: "Rebalance",
-                d: "Reinstalling and verifying vibration-free spin.",
+                t: "Load Test",
+                d: "Reinstalling and verifying perfect balance with zero vibration under full load.",
               },
             ].map((step, i) => (
               <div
@@ -224,15 +224,15 @@ export default function FurnaceBlowerCleaningPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-                  Stop the <br />
-                  <span className="text-[#5E7AC4]">Vibration.</span>
+                  End the Mechanical <br />
+                  <span className="text-[#5E7AC4]">Stress.</span>
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Complete blower wheel removal and cleaning",
-                    "Motor housing vacuuming & dusting",
-                    "Fan belt inspection & tension adjustment",
-                    "Capacitor performance testing",
+                    "Full extraction & deep cleaning of the blower wheel",
+                    "HEPA-rated vacuuming of the motor housing",
+                    "Drive belt tension audit and alignment check",
+                    "Post-service vibration & noise analysis report",
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="h-6 w-6 rounded-full bg-[#5E7AC4]/20 flex items-center justify-center">
@@ -243,7 +243,7 @@ export default function FurnaceBlowerCleaningPage() {
                   ))}
                 </div>
                 <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
-                  Book Technical Service
+                  Book Technical Restoration
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
@@ -253,9 +253,9 @@ export default function FurnaceBlowerCleaningPage() {
                 <div className="absolute inset-0 bg-linear-to-br from-[#5E7AC4]/20 to-transparent" />
                 <Image
                   src="/images/furnace-blower-wheel.jpg"
-                  alt="Furnace Blower Maintenance"
+                  alt="Furnace Blower Wheel Maintenance and Disassembly"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-90"
                 />
               </div>
             </div>
