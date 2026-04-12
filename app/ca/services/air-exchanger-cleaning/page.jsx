@@ -22,7 +22,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function AirExchangerCleaning() {
+export default function AirExchangerCleaningCA() {
   const mainRef = useRef(null);
 
   useEffect(() => {
@@ -67,20 +67,20 @@ export default function AirExchangerCleaning() {
             <div className="hero-text inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#5E7AC4] animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#5E7AC4]">
-                HRV & ERV Maintenance Experts
+                Canadian HRV & ERV Specialists
               </span>
             </div>
 
             <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
-              Pure Oxygen. <span className="text-[#5E7AC4]">Balanced.</span>
+              Breathe Deep. <span className="text-[#5E7AC4]">Balanced.</span>
               <br />
-              Core Efficiency.
+              Total Core Recovery.
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              We specialize in deep-cleaning Heat Recovery Ventilators. By
-              decontaminating the core and filters, we ensure your home
-              exchanges stale air for crisp, outdoor purity.
+              In modern Canadian homes, your Air Exchanger is your lifeline to fresh air. 
+              We provide expert decontamination of HRV/ERV cores and filters to 
+              ensure your indoor air is fresh, crisp, and properly humidified.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
@@ -102,7 +102,7 @@ export default function AirExchangerCleaning() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-gray-500 italic">
-                  Certified Air Exchange Techs
+                  Ensuring Year-Round Efficiency
                 </p>
               </div>
             </div>
@@ -116,35 +116,35 @@ export default function AirExchangerCleaning() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Optimizing Your Recovery Core
+                Optimising Your Thermal Core
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                A neglected air exchanger can become a source of humidity and
-                pollutants. Our process restores your system to factory-spec
-                performance.
+                Neglected air exchangers often become breeding grounds for bacteria and 
+                excess humidity. Our restoration process ensures your unit operates 
+                at peak thermal efficiency.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
               {[
                 {
                   icon: ThermometerSnowflake,
-                  t: "Thermal Recovery",
-                  d: "Clean cores transfer heat up to 30% more effectively during extreme weather.",
+                  t: "Heat Recovery",
+                  d: "Cleaning the exchanger core restores up to 30% of heat transfer effectiveness in winter.",
                 },
                 {
                   icon: Filter,
-                  t: "HEPA Filtration",
-                  d: "Deep cleaning of intake screens and replacement of internal filters for maximum purity.",
+                  t: "Advanced Filtration",
+                  d: "Deep cleaning of external intake hoods and internal filter replacement for maximum purity.",
                 },
                 {
                   icon: Gauge,
-                  t: "Airflow Balancing",
-                  d: "We calibrate supply and exhaust fans to maintain neutral house pressure.",
+                  t: "Pressure Balancing",
+                  d: "We recalibrate intake and exhaust fans to ensure your home maintains neutral air pressure.",
                 },
                 {
                   icon: Sparkles,
-                  t: "Pathogen Removal",
-                  d: "Anti-microbial treatment of the drainage system to eliminate stagnant odors.",
+                  t: "Odour Neutralisation",
+                  d: "Anti-microbial flushing of the drainage system to remove stagnant water and musty odours.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -163,10 +163,10 @@ export default function AirExchangerCleaning() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Our Engineering Approach
+              The Canadian Service Standard
             </h2>
             <p className="text-gray-500 text-lg">
-              Beyond a simple wipe-down; we perform a full system reset.
+              We follow a rigorous protocol to reset your ventilation system to factory-spec.
             </p>
           </div>
 
@@ -174,28 +174,28 @@ export default function AirExchangerCleaning() {
             {[
               {
                 n: "01",
-                t: "Diagnosis",
-                d: "Checking motor amps and static pressure.",
+                t: "Inspection",
+                d: "Testing motor amp draw and external intake screens.",
               },
               {
                 n: "02",
-                t: "Core Wash",
-                d: "Chemical-free ultrasonic or manual wash.",
+                t: "Core Sanitation",
+                d: "Deep-wash of the HRV/ERV core to remove fine dust and spores.",
               },
               {
                 n: "03",
-                t: "Vent Clear",
-                d: "Clearing debris from outside intake hoods.",
+                t: "Hood Clearance",
+                d: "Removing debris from outside intake and exhaust hoods.",
               },
               {
                 n: "04",
-                t: "Disinfect",
-                d: "EPA-approved fogging of the unit cabinet.",
+                t: "Cabinet Fog",
+                d: "EPA-approved sanitising of the unit's internal cabinet.",
               },
               {
                 n: "05",
                 t: "Calibration",
-                d: "Final balancing for optimal air change.",
+                d: "Final balancing of airflow for optimal air change rates.",
               },
             ].map((step, i) => (
               <div
@@ -217,22 +217,22 @@ export default function AirExchangerCleaning() {
         </div>
       </section>
 
-      {/* ── Visual Comparison Section ── */}
+      {/* ── CTA / Comparison ── */}
       <section className="reveal-section py-24 bg-white">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="rounded-[40px] bg-[#0d0d0d] overflow-hidden text-white p-10 lg:p-20 relative">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-                  Performance <br />
-                  <span className="text-[#5E7AC4]">Guaranteed.</span>
+                  Efficiency <br />
+                  <span className="text-[#5E7AC4]">Redefined.</span>
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Core decontamination by certified technicians",
-                    "Full drainage and trap system flush",
-                    "Detailed airflow measurement reports",
-                    "Energy efficiency verification",
+                    "Professional HRV/ERV core decontamination",
+                    "Cleaning of all supply and exhaust registers",
+                    "Detailed airflow and balancing report",
+                    "Indoor humidity level verification",
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="h-6 w-6 rounded-full bg-[#5E7AC4]/20 flex items-center justify-center">
@@ -243,19 +243,19 @@ export default function AirExchangerCleaning() {
                   ))}
                 </div>
                 <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
-                  Learn about ERV/HRV
+                  Book Professional Service
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
                 </button>
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gray-800 animate-pulse" />
+                <div className="absolute inset-0 bg-gray-800" />
                 <Image
                   src="/images/air-exchanger-cleaning.jpg"
-                  alt="Air Exchanger Service"
+                  alt="Canadian HRV Service"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-90"
                 />
               </div>
             </div>

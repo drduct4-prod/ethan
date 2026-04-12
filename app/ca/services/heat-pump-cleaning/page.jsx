@@ -9,10 +9,10 @@ import {
   Wind,
   CheckCircle2,
   ArrowRight,
-  ThermometerSnowflake, // Heating/Cooling
-  Zap, // Efficiency
-  Droplets, // Coil Cleaning
-  Settings2, // Calibration
+  ThermometerSnowflake,
+  Zap,
+  Droplets,
+  Settings2,
   ShieldCheck,
   Activity,
 } from "lucide-react";
@@ -22,7 +22,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function HeatPumpCleaningPage() {
+export default function HeatPumpCleaningPageCA() {
   const mainRef = useRef(null);
 
   useEffect(() => {
@@ -67,20 +67,20 @@ export default function HeatPumpCleaningPage() {
             <div className="hero-text inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#5E7AC4] animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#5E7AC4]">
-                Advanced HVAC Performance
+                Cold-Climate Performance Specialists
               </span>
             </div>
 
             <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
               Peak <span className="text-[#5E7AC4]">Efficiency.</span>
               <br />
-              All-Season Comfort.
+              Canadian Comfort.
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              Don't let dirt drive up your energy bills. Our deep-coil cleaning
-              and system calibration ensure your heat pump delivers maximum BTU
-              output with minimum power consumption.
+              Don't let ice or debris drive up your hydro bills. Our specialist 
+              deep-coil cleaning ensures your heat pump maintains maximum thermal 
+              output even during the harshest Canadian winters.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
@@ -88,7 +88,7 @@ export default function HeatPumpCleaningPage() {
                 href="/book"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
-                Schedule Tune-Up <ArrowRight className="h-5 w-5" />
+                Book Your Tune-Up <ArrowRight className="h-5 w-5" />
               </Link>
               <div className="flex items-center gap-4 px-2">
                 <div className="flex -space-x-3">
@@ -102,7 +102,7 @@ export default function HeatPumpCleaningPage() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-gray-500 italic">
-                  Save up to 25% on Energy Bills
+                  Save up to 25% on Heating Costs
                 </p>
               </div>
             </div>
@@ -110,41 +110,41 @@ export default function HeatPumpCleaningPage() {
         </div>
       </section>
 
-      {/* ── Why Maintenance Matters ── */}
+      {/* ── Impact Section ── */}
       <section className="reveal-section py-24 bg-white">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                The Power of a Clean System
+                Maximising Heat Exchange
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Heat pumps rely on airflow and heat exchange. Even a thin layer
-                of grime on your coils can force the compressor to work twice as
-                hard, leading to premature failure.
+                Heat pumps rely on efficient air flow. Even a minor buildup 
+                of grime or oxidation on your coils can force your compressor 
+                to overwork, leading to high bills and system stress.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
               {[
                 {
                   icon: Droplets,
-                  t: "Chemical Coil Wash",
-                  d: "Removing oxidation and buildup from evaporator coils for better heat transfer.",
+                  t: "Deep Coil Wash",
+                  d: "Removing oxidation and environmental buildup from evaporator coils for superior heat transfer.",
                 },
                 {
                   icon: Wind,
-                  t: "Airflow Optimization",
-                  d: "Deep cleaning blower wheels and fans to ensure consistent temperature distribution.",
+                  t: "Airflow Optimisation",
+                  d: "Precision cleaning of blower wheels and fans to ensure consistent temperature distribution.",
                 },
                 {
                   icon: Activity,
-                  t: "Component Testing",
-                  d: "Proactive checking of capacitors and contactors to prevent emergency breakdowns.",
+                  t: "Diagnostic Testing",
+                  d: "Proactive checking of capacitors and electrical contactors to prevent winter breakdowns.",
                 },
                 {
                   icon: Settings2,
                   t: "Fin Straightening",
-                  d: "Repairing bent condenser fins to restore aerodynamic cooling efficiency.",
+                  d: "Repairing bent condenser fins to restore aerodynamic cooling and defrosting efficiency.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -158,16 +158,15 @@ export default function HeatPumpCleaningPage() {
         </div>
       </section>
 
-      {/* ── Professional Process ── */}
+      {/* ── Process ── */}
       <section className="reveal-section py-24 bg-[#f9fafb]">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Our 5-Point Tune-Up
+              The 5-Point Tune-Up
             </h2>
             <p className="text-gray-500 text-lg">
-              A comprehensive service designed for both indoor and outdoor
-              units.
+              A comprehensive service protocol designed for year-round reliability.
             </p>
           </div>
 
@@ -175,28 +174,28 @@ export default function HeatPumpCleaningPage() {
             {[
               {
                 n: "01",
-                t: "Scan",
-                d: "Infrared thermal imaging of the coils.",
+                t: "Thermal Scan",
+                d: "Using infrared imaging to detect blockages in the coils.",
               },
               {
                 n: "02",
-                t: "Degrease",
-                d: "Applying eco-friendly foaming coil cleaners.",
+                t: "De-Greasing",
+                d: "Applying specialised foaming cleaners to break down bio-film.",
               },
               {
                 n: "03",
-                t: "Flush",
-                d: "High-pressure clearing of condensate drains.",
+                t: "Sanitise",
+                d: "Clearing condensate drains and pans of microbial growth.",
               },
               {
                 n: "04",
-                t: "Verify",
-                d: "Testing refrigerant levels and pressures.",
+                t: "Verification",
+                d: "Testing defrost cycles and refrigerant pressures for accuracy.",
               },
               {
                 n: "05",
                 t: "Calibrate",
-                d: "Optimizing thermostat and cycle times.",
+                d: "Optimising thermostat settings for better cycle management.",
               },
             ].map((step, i) => (
               <div
@@ -218,7 +217,7 @@ export default function HeatPumpCleaningPage() {
         </div>
       </section>
 
-      {/* ── Final CTA Section ── */}
+      {/* ── CTA ── */}
       <section className="reveal-section py-24 bg-white">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="rounded-[40px] bg-[#0d0d0d] overflow-hidden text-white p-10 lg:p-20 relative">
@@ -230,10 +229,10 @@ export default function HeatPumpCleaningPage() {
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Priority scheduling for seasonal maintenance",
-                    "Multi-point safety & electrical inspection",
+                    "Priority scheduling for pre-winter maintenance",
+                    "Multi-point electrical and safety inspection",
                     "Before/After efficiency benchmark report",
-                    "100% Satisfaction or your money back",
+                    "WSIB compliant and fully insured technicians",
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="h-6 w-6 rounded-full bg-[#5E7AC4]/20 flex items-center justify-center">
@@ -244,17 +243,16 @@ export default function HeatPumpCleaningPage() {
                   ))}
                 </div>
                 <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
-                  View Pricing Packages
+                  View Maintenance Packages
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
                 </button>
               </div>
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-                <div className="absolute inset-0 bg-linear-to-br from-[#5E7AC4]/10 to-transparent" />
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/heat-pump-service.jpg"
-                  alt="Heat Pump Cleaning Process"
+                  alt="Heat Pump Service Canada"
                   fill
                   className="object-cover opacity-90"
                 />

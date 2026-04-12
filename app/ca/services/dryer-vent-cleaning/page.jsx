@@ -9,11 +9,11 @@ import {
   Wind,
   CheckCircle2,
   ArrowRight,
-  FlameKindling, // Fire Safety
-  Clock, // Efficiency/Time
-  ShieldAlert, // Prevention
+  FlameKindling,
+  Clock,
+  ShieldAlert,
   Zap,
-  Trash2, // Lint Removal
+  Trash2,
   Sparkles,
 } from "lucide-react";
 import { urbanist } from "@/app/fonts";
@@ -22,7 +22,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function DryerVentCleaningPage() {
+export default function DryerVentCleaningPageCA() {
   const mainRef = useRef(null);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function DryerVentCleaningPage() {
             <div className="hero-text inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-red-600">
-                Fire Prevention & Safety
+                Canadian Home Safety Standard
               </span>
             </div>
 
@@ -78,9 +78,9 @@ export default function DryerVentCleaningPage() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              A clogged dryer vent is a major fire hazard and wastes
-              electricity. We use high-velocity suction and mechanical brushing
-              to clear every inch of lint buildup.
+              A clogged dryer vent is one of the leading causes of residential fires in Canada. 
+              We use industrial-grade suction and mechanical brushing to clear flammable lint 
+              buildup and restore your dryer's efficiency.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
@@ -88,7 +88,7 @@ export default function DryerVentCleaningPage() {
                 href="/book"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
-                Book Vent Cleaning <ArrowRight className="h-5 w-5" />
+                Schedule Vent Cleaning <ArrowRight className="h-5 w-5" />
               </Link>
               <div className="flex items-center gap-4 px-2">
                 <div className="flex -space-x-3">
@@ -102,7 +102,7 @@ export default function DryerVentCleaningPage() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-gray-500 italic">
-                  Preventing 15,000+ Dryer Fires Yearly
+                  Certified Fire Prevention Techs
                 </p>
               </div>
             </div>
@@ -110,40 +110,41 @@ export default function DryerVentCleaningPage() {
         </div>
       </section>
 
-      {/* ── Why it's Critical ── */}
+      {/* ── Technical Impact ── */}
       <section className="reveal-section py-24 bg-white">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Why Clear Your Vents?
+                Beyond Just Lint
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Lint bypasses the trap and settles in the vent pipe, restricting
-                airflow and causing your dryer to overheat.
+                Moisture trapped by lint can lead to mould growth inside your walls. 
+                Our service ensures a clear path for hot air and humidity to exit 
+                your home safely.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
               {[
                 {
                   icon: ShieldAlert,
-                  t: "Fire Risk Mitigation",
-                  d: "Removing the #1 cause of residential dryer fires: flammable lint accumulation.",
+                  t: "Risk Mitigation",
+                  d: "Eliminating flammable debris to prevent thermostat overheating and potential ignition.",
                 },
                 {
                   icon: Clock,
-                  t: "Faster Dry Times",
-                  d: "Restored airflow means clothes dry in one cycle instead of two or three.",
+                  t: "Cycle Optimisation",
+                  d: "Clothes dry in a single cycle, saving you time and reducing appliance wear.",
                 },
                 {
                   icon: Zap,
-                  t: "Energy Savings",
-                  d: "Reduces wear on the heating element and lowers monthly utility costs.",
+                  t: "Hydro Savings",
+                  d: "Improved airflow reduces electricity consumption by allowing the motor to run at lower stress levels.",
                 },
                 {
                   icon: Trash2,
-                  t: "Clog Detection",
-                  d: "Identifying bird nests or crushed vent pipes that block exhaust exit.",
+                  t: "Obstruction Removal",
+                  d: "Clearing bird nests, rodent debris, or crushed pipes that commonly block exterior outlets.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -157,15 +158,15 @@ export default function DryerVentCleaningPage() {
         </div>
       </section>
 
-      {/* ── Process ── */}
+      {/* ── 5-Point Protocol ── */}
       <section className="reveal-section py-24 bg-[#f9fafb]">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Our Cleaning Protocol
+              Our Multi-Step Protocol
             </h2>
             <p className="text-gray-500 text-lg">
-              We clean from both ends to ensure 100% blockage removal.
+              We clean from both the interior and exterior for a 100% clear passage.
             </p>
           </div>
 
@@ -173,28 +174,28 @@ export default function DryerVentCleaningPage() {
             {[
               {
                 n: "01",
-                t: "Test",
-                d: "Measuring back-pressure and airflow velocity.",
+                t: "Velocity Test",
+                d: "Measuring airflow speed in metres per second to find blockages.",
               },
               {
                 n: "02",
-                t: "Access",
-                d: "Disconnecting the dryer for full pipe entry.",
+                t: "Transition",
+                d: "Disconnecting and vacuuming the back of the dryer unit.",
               },
               {
                 n: "03",
-                t: "Agitate",
-                d: "Using rotary brushes to loosen stubborn lint.",
+                t: "Scrubbing",
+                d: "Using high-speed rotary brushes to dislodge packed lint.",
               },
               {
                 n: "04",
-                t: "Extract",
-                d: "High-power HEPA vacuuming of all debris.",
+                t: "Extraction",
+                d: "HEPA-certified vacuuming of the entire vent length.",
               },
               {
                 n: "05",
-                t: "Confirm",
-                d: "Verifying exhaust hood flap functionality.",
+                t: "Exterior Check",
+                d: "Ensuring the outside flap or bird-guard is fully functional.",
               },
             ].map((step, i) => (
               <div
@@ -228,10 +229,10 @@ export default function DryerVentCleaningPage() {
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Thorough cleaning of the transition hose",
-                    "Exhaust wall cap & bird guard check",
-                    "Lint trap housing deep cleaning",
-                    "Airflow performance report provided",
+                    "Full sanitisation of the lint trap housing",
+                    "Exterior wall cap and bird guard inspection",
+                    "WSIB compliant and fully insured technicians",
+                    "Before/After airflow performance report",
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="h-6 w-6 rounded-full bg-[#5E7AC4]/20 flex items-center justify-center">
@@ -242,17 +243,16 @@ export default function DryerVentCleaningPage() {
                   ))}
                 </div>
                 <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
-                  Book Same-Day Service
+                  Book Professional Service
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
                 </button>
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-                <div className="absolute inset-0 bg-linear-to-tr from-red-500/10 to-transparent" />
                 <Image
                   src="/images/dryer-vent-lint.jpg"
-                  alt="Dryer Vent Cleaning"
+                  alt="Dryer Vent Service Canada"
                   fill
                   className="object-cover opacity-80"
                 />
