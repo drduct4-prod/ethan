@@ -646,7 +646,7 @@ export default function Navbar() {
       {/* ── Mobile slide-in panel ── */}
       <div
         ref={mobileMenuRef}
-        className={`fixed right-4 top-0 z-50 flex h-full w-75 flex-col bg-[#0d0d0d] shadow-2xl lg:hidden ${urbanist.className}`}
+        className={`fixed right-0 top-0 z-50 flex h-full w-75 flex-col bg-[#0d0d0d] shadow-2xl lg:hidden ${urbanist.className}`}
         style={{ borderLeft: "1px solid rgba(255,255,255,0.08)" }}
       >
         {/* Mobile header */}
