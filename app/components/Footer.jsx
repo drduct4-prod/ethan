@@ -37,11 +37,10 @@ function createWithCountry(country) {
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Service Areas", href: "/service-areas" },
-  { label: "Projects", href: "/projects" },
-  { label: "Reviews", href: "/reviews" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Services", href: "#what-we-do" },
+  // { label: "Service Areas", href: "/service-areas" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "Contact Us", href: "/contactus" },
 ];
 
 const SERVICES = [
@@ -57,7 +56,7 @@ const SOCIAL = [
   { label: "Facebook", href: "https://facebook.com", imgSrc: "/fb_logo.jpg", external: true },
   { label: "Instagram", href: "https://instagram.com", imgSrc: "/insta_logo.jpg", external: true },
   { label: "WhatsApp", href: "https://wa.me/15144004572", icon: MessageCircle, external: true },
-  { label: "Email us", href: "mailto:info@impeccableducts.com", icon: Mail, external: false },
+  { label: "Email us", href: "mailto:info@ethanductscleaning.com", icon: Mail, external: false },
 ];
 
 export default function Footer() {
@@ -144,8 +143,8 @@ export default function Footer() {
               </ContactRow>
               
               <div className="space-y-1">
-                <ContactRow icon={Mail} label="Email" href="mailto:info@impeccableducts.com" isLink>
-                  info@impeccableducts.com
+                <ContactRow icon={Mail} label="Email" href="mailto:info@ethanductscleaning.com" isLink>
+                  info@ethanductscleaning.com
                 </ContactRow>
                 <a 
                   href="mailto:impeccablesolution0@gmail.com" 
@@ -161,7 +160,7 @@ export default function Footer() {
             </div>
 
             <Link
-              href={withCountry("/quote")}
+              href={("/contactus")}
               className="group mt-2 flex items-center justify-between rounded-xl bg-white/[0.07] border border-white/10 px-4 py-3 hover:bg-[#5E7AC4] transition-all"
             >
               <span className="text-[12.5px] font-bold text-white/80 group-hover:text-white">Get a Free Quote</span>

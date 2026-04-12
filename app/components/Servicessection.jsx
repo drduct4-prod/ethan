@@ -281,7 +281,7 @@ export default function ServicesSection() {
         <p className={`text-[13px] text-gray-400 ${inter.className}`}>
           Not sure which service you need?{" "}
           <Link
-            href={withCountry("/contact")}
+            href={("/contactus")}
             className="font-semibold text-gray-700 underline underline-offset-2 hover:text-[#5E7AC4] transition-colors"
           >
             Talk to us free
@@ -289,10 +289,10 @@ export default function ServicesSection() {
         </p>
 
         <Link
-          href={withCountry("/services")}
-          className="group flex items-center gap-2.5 rounded-xl border-2 border-gray-900 bg-gray-900 px-6 py-3.5 text-[13.5px] font-bold text-white transition-all duration-200 hover:bg-white hover:text-gray-900 lg:px-8 lg:py-4 lg:text-[14px]"
+          href={("/contactus")}
+          className="group tracking-wide flex items-center gap-2.5 rounded-xl border-2 border-gray-900 bg-gray-900 px-6 py-3.5 text-[13.5px] font-bold text-white transition-all duration-200 hover:bg-white hover:text-gray-900 lg:px-8 lg:py-4 lg:text-[16px]"
         >
-          View All Services
+          Book Online
           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
         </Link>
       </div>

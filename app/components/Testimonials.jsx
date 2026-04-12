@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star, Quote } from "lucide-react";
 import { urbanist, inter } from "../fonts";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -375,12 +376,12 @@ export default function TestimonialsSection() {
         <p className="text-[13px] text-gray-400">
           Join 800+ satisfied homeowners across Greater Montreal
         </p>
-        <a
-          href="/reviews"
+        <Link
+          href="/contactus"
           className={`inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-5 py-2.5 text-[13px] font-bold text-gray-700 shadow-sm transition-all duration-200 hover:border-[#5E7AC4] hover:text-[#5E7AC4] hover:shadow-[0_0_0_3px_rgba(94,122,196,0.08)] active:scale-[0.98] ${urbanist.className}`}
         >
           Read All Reviews →
-        </a>
+        </Link>
       </div>
     </section>
   );

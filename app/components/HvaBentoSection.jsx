@@ -131,7 +131,7 @@ export default function HVACBentoSection() {
             {/* ── Mobile stack (xs only) ── */}
             <div className="flex flex-col gap-3 sm:hidden">
               {/* Large */}
-              <div className="bento-img relative h-52 w-full overflow-hidden rounded-2xl bg-gray-900">
+              <div className="bento-img relative h-52 w-full overflow-hidden rounded bg-gray-900">
                 <Image src={IMAGES.large.src} alt={IMAGES.large.alt} fill
                   sizes="100vw" className="object-cover transition-transform duration-700 hover:scale-105"
                   style={{ background: IMAGES.large.fallback }} />
@@ -140,12 +140,12 @@ export default function HVACBentoSection() {
               </div>
               {/* Two smalls side-by-side */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="bento-img relative h-36 overflow-hidden rounded-2xl bg-gray-900">
+                <div className="bento-img relative h-36 overflow-hidden rounded bg-gray-900">
                   <Image src={IMAGES.topSmall.src} alt={IMAGES.topSmall.alt} fill
                     sizes="50vw" className="object-cover transition-transform duration-700 hover:scale-105"
                     style={{ background: IMAGES.topSmall.fallback }} />
                 </div>
-                <div className="bento-img relative h-36 overflow-hidden rounded-2xl bg-gray-900">
+                <div className="bento-img relative h-36 overflow-hidden rounded bg-gray-900">
                   <Image src={IMAGES.bottomSmall.src} alt={IMAGES.bottomSmall.alt} fill
                     sizes="50vw" className="object-cover transition-transform duration-700 hover:scale-105"
                     style={{ background: IMAGES.bottomSmall.fallback }} />
@@ -165,7 +165,7 @@ export default function HVACBentoSection() {
               }}
             >
               {/* Large — spans 2 rows */}
-              <div className="bento-img relative row-span-2 overflow-hidden rounded-2xl bg-gray-900">
+              <div className="bento-img relative row-span-2 overflow-hidden rounded bg-gray-900">
                 <Image src={IMAGES.large.src} alt={IMAGES.large.alt} fill
                   sizes="(max-width:1024px) 55vw, 30vw"
                   className="object-cover transition-transform duration-700 ease-out hover:scale-105"
@@ -174,14 +174,14 @@ export default function HVACBentoSection() {
                   style={{ background: "linear-gradient(to top,rgba(0,0,0,0.45),transparent)" }} />
               </div>
               {/* Top small */}
-              <div className="bento-img relative overflow-hidden rounded-2xl bg-gray-900">
+              <div className="bento-img relative overflow-hidden rounded bg-gray-900">
                 <Image src={IMAGES.topSmall.src} alt={IMAGES.topSmall.alt} fill
                   sizes="(max-width:1024px) 28vw, 18vw"
                   className="object-cover transition-transform duration-700 ease-out hover:scale-105"
                   style={{ background: IMAGES.topSmall.fallback }} />
               </div>
               {/* Bottom small */}
-              <div className="bento-img relative overflow-hidden rounded-2xl bg-gray-900">
+              <div className="bento-img relative overflow-hidden rounded bg-gray-900">
                 <Image src={IMAGES.bottomSmall.src} alt={IMAGES.bottomSmall.alt} fill
                   sizes="(max-width:1024px) 28vw, 18vw"
                   className="object-cover transition-transform duration-700 ease-out hover:scale-105"
@@ -270,15 +270,15 @@ export default function HVACBentoSection() {
 
             {/* CTAs */}
             <div className="text-el mt-7 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
-              <Link
-                href="/services"
+              <a
+                href="#what-we-do"
                 className="group flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-[13px] font-bold text-gray-900 shadow-md transition-all duration-200 hover:-translate-y-px hover:bg-[#5E7AC4] hover:text-white hover:shadow-[#5E7AC4]/25 active:scale-[0.98] sm:w-auto sm:text-[13.5px]"
               >
                 Explore All Services
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2.25} />
-              </Link>
+              </a>
               <Link
-                href="/book"
+                href="/contactus"
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-[13px] font-bold text-white transition-all duration-200 hover:-translate-y-px hover:border-white/30 hover:bg-white/10 active:scale-[0.98] sm:w-auto sm:text-[13.5px]"
               >
                 Book a Free Estimate

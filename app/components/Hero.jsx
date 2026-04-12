@@ -212,7 +212,7 @@ export default function Hero() {
                   Padding, text, and icon scale on lg+. */}
               <div className="hl mt-4 flex flex-wrap items-center gap-2 sm:mt-4 md:mt-5 lg:mt-8 lg:gap-3 xl:mt-10">
                 <Link
-                  href="/book"
+                  href="/contactus"
                   className="group flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-2.5 text-[12.5px] font-bold text-gray-900 shadow-md transition-all duration-200 hover:-translate-y-px hover:bg-[#5E7AC4] hover:text-white hover:shadow-lg active:translate-y-0 active:scale-[0.97] sm:w-auto sm:justify-start lg:rounded-xl lg:px-7 lg:py-4 lg:text-[15px] xl:px-8 xl:py-[18px] xl:text-[16px]"
                 >
                   <CalendarCheck className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:scale-110 lg:h-5 lg:w-5" strokeWidth={2} />
@@ -220,7 +220,7 @@ export default function Hero() {
                 </Link>
 
                 <Link
-                  href="/quote"
+                  href="/contactus"
                   className="group flex w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-white/[0.08] px-4 py-2.5 text-[12.5px] font-bold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-px hover:border-white/50 hover:bg-white/[0.15] active:translate-y-0 active:scale-[0.97] sm:w-auto sm:justify-start lg:rounded-xl lg:px-7 lg:py-4 lg:text-[15px] xl:px-8 xl:py-[18px] xl:text-[16px]"
                 >
                   <FileText className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:scale-110 lg:h-5 lg:w-5" strokeWidth={2} />

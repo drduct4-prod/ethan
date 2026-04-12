@@ -12,6 +12,7 @@ import {
   Zap,
 } from "lucide-react";
 import { urbanist, inter } from "../fonts";
+import Link from "next/link";
 
 // ─────────────────────────────────────────────
 // Register GSAP plugin (safe for SSR)
@@ -250,12 +251,12 @@ export default function WhyChooseUs() {
           <p className={`text-[13px] text-black/40 ${inter.className}`}>
             Ready to experience the difference?
           </p>
-          <a
-            href="/book"
+          <Link
+            href="/contactus"
             className="inline-flex items-center gap-2 rounded-xl bg-black px-5 py-2.5 text-[13px] font-bold text-white shadow-lg shadow-[#5E7AC4]/20 transition-all duration-200 hover:-translate-y-px hover:bg-[#4a63a8] hover:shadow-[#5E7AC4]/35 active:translate-y-0 active:scale-[0.98]"
           >
             Book Appointment →
-          </a>
+          </Link>
         </div>
 
       </div>
