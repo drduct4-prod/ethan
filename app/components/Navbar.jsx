@@ -443,7 +443,7 @@ export default function Navbar() {
         </div>
 
         {/* Promo text */}
-        <span>{country.promoText}</span>
+        <span className="text-[0.6rem] lg:text-[0.9rem]">{country.promoText}</span>
       </div>
 
       {/* ── Main navbar ── */}
