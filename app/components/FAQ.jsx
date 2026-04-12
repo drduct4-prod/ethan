@@ -215,14 +215,14 @@ export default function FAQSection() {
             */}
             <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
               <Link
-                href="/quote"
+                href="/contactus"
                 className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-[13px] font-bold text-white transition-all duration-200 hover:bg-[#5E7AC4] sm:w-auto sm:justify-start lg:px-7 lg:py-3.5 lg:text-[14px]"
               >
                 Get a Free Quote
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/contact"
+                href="/contactus"
                 className={`flex min-h-[44px] items-center justify-center gap-2 text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900 sm:justify-start ${inter.className}`}
               >
                 <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={1.75} />
