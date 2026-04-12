@@ -72,7 +72,7 @@ export default function AirDuctCleaningPage() {
               </span>
             </div>
 
-            <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-[1] tracking-tight text-gray-900 mb-8">
+            <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
               Breathable <span className="text-[#5E7AC4]">Purity.</span>
               <br />
               Advanced Duct Care.
