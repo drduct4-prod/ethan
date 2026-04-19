@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "services": "Services",
+    "whatWeDo": "Ce Que Nous Faisons",
+    "reviews": "Avis",
+    "bookOnline": "Réserver en ligne",
+    "contactUs": "Contactez-nous",
+    "promoStrong": "Économisez 10%",
+    "promoRest": "sur votre première réservation de nettoyage HVAC!"
+  },
+  "footer": {
+    "tagline": "Respirez mieux avec Impeccable Solution Duct Cleaning — vos experts de confiance pour le nettoyage professionnel de conduits et de ventilation à Montréal.",
+    "quickLinks": "Liens Rapides",
+    "ourServices": "Nos Services",
+    "contactInfo": "Coordonnées",
+    "getFreeQuote": "Obtenir un Devis Gratuit",
+    "copyright": "Air Duct Cleaning Solution. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "links": {
+      "home": "Accueil",
+      "services": "Services",
+      "reviews": "Avis",
+      "contact": "Contactez-nous"
+    }
+  },
+  "hero": {
+    "eyebrow": "Notre Spécialité",
+    "h1a": "Nettoyage Professionnel de",
+    "h1b": "Conduits d'Air",
+    "h1c": "et de Ventilation",
+    "h1d": "à Montréal",
+    "h1sub": "et Régions Environnantes",
+    "descPre1": "Vos experts de confiance pour le ",
+    "descBold1": "nettoyage de conduits et de ventilation",
+    "descMid": " à Montréal. Nous éliminons la poussière, les débris et les allergènes pour améliorer la ",
+    "descBold2": "qualité de l'air intérieur",
+    "descPost": " et l'efficacité du HVAC — pour les maisons et les entreprises de toutes tailles.",
+    "cta1": "Prendre un Rendez-vous",
+    "cta2": "Devis Gratuit",
+    "trust1": "Licencié et Assuré",
+    "trust2": "500+ Avis Cinq Étoiles",
+    "trust3": "Certifié NADCA",
+    "formTitle": "Estimation Gratuite",
+    "formSub": "Réponse sous 24 heures",
+    "mobileEyebrow": "Obtenir une Estimation Gratuite",
+    "mobileTitle": "Demander un Devis",
+    "mobileSub": "Nous répondrons dans les 24 heures."
+  },
+  "servicesSection": {
+    "eyebrow": "Ce Que Nous Faisons",
+    "heading1": "Services Professionnels",
+    "heading2": "à Domicile",
+    "heading3": "En qui Vous Pouvez Avoir Confiance",
+    "desc": "Du nettoyage de conduits d'air et de l'entretien des fournaises au nettoyage des évents de sécheuse et des aspirateurs centraux — nous couvrons chaque recoin de votre maison avec des techniciens certifiés.",
+    "stat1Val": "500+",
+    "stat1Label": "Avis cinq étoiles",
+    "stat2Val": "12 ans",
+    "stat2Label": "En affaires",
+    "stat3Val": "100%",
+    "stat3Label": "Taux de satisfaction",
+    "notSure": "Vous ne savez pas quel service vous convient?",
+    "talkFree": "Parlez-nous gratuitement",
+    "bookOnline": "Réserver en Ligne",
+    "getQuote": "Obtenir un Devis",
+    "list": {
+      "air-duct-cleaning": {
+        "title": "Nettoyage de Conduits d'Air",
+        "shortTitle": "Conduits d'Air",
+        "description": "Nous éliminons la poussière, la saleté et les allergènes de votre réseau de conduits pour améliorer la qualité de l'air et l'efficacité énergétique.",
+        "bullets": ["Élimine allergènes et moisissures", "Améliore l'efficacité HVAC", "Inspection avant et après"]
+      },
+      "air-exchanger-cleaning": {
+        "title": "Nettoyage d'Échangeur d'Air",
+        "shortTitle": "Échangeur d'Air",
+        "description": "Notre service de nettoyage d'échangeur d'air assure le bon fonctionnement de votre système de ventilation et prévient les moisissures.",
+        "bullets": ["Prévient moisissures et bactéries", "Optimise la circulation d'air", "Prolonge la durée de vie"]
+      },
+      "heat-pump-cleaning": {
+        "title": "Nettoyage de Pompe à Chaleur",
+        "shortTitle": "Pompe à Chaleur",
+        "description": "Nettoyage en profondeur des bobines, filtres et composants pour améliorer les performances de votre pompe à chaleur et réduire les coûts énergétiques.",
+        "bullets": ["Nettoyage bobines et filtres", "Réduit les factures d'énergie", "Toutes marques"]
+      },
+      "dryer-vent-cleaning": {
+        "title": "Nettoyage d'Évent de Sécheuse",
+        "shortTitle": "Évent Sécheuse",
+        "description": "L'accumulation de peluches peut être un risque d'incendie. Notre nettoyage professionnel assure un flux d'air sûr et efficace pour votre sécheuse.",
+        "bullets": ["Prévention des incendies", "Cycles de séchage plus rapides", "Conduit sans peluches"]
+      },
+      "furnace-blower-cleaning": {
+        "title": "Nettoyage du Souffleur de Fournaise",
+        "shortTitle": "Souffleur Fournaise",
+        "description": "Un nettoyage en profondeur améliore les performances de chauffage, réduit la consommation d'énergie et prolonge la durée de vie de votre fournaise.",
+        "bullets": ["Améliore le rendement thermique", "Réduit la consommation", "Prolonge la durée de vie"]
+      },
+      "central-vacuum-cleaning": {
+        "title": "Nettoyage d'Aspirateur Central",
+        "shortTitle": "Aspirateur Central",
+        "description": "Éliminez la poussière et les débris piégés pour restaurer une aspiration complète et maintenir votre maison sans allergènes toute l'année.",
+        "bullets": ["Aspiration pleinement restaurée", "Maison sans allergènes", "Toutes les marques"]
+      }
+    }
+  },
+  "contact": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Jean Dupont",
+    "phoneLabel": "Téléphone",
+    "phonePlaceholder": "+1 (514) 000-0000",
+    "emailLabel": "Courriel",
+    "emailPlaceholder": "jean@exemple.com",
+    "serviceLabel": "Service",
+    "selectService": "Choisissez un service…",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Détails sur votre domicile ou votre dernier nettoyage…",
+    "optional": "facultatif",
+    "submit": "Obtenir un Devis Gratuit",
+    "noSpam": "Pas de spam — nous vous contacterons uniquement au sujet de votre demande.",
+    "successTitle": "Demande reçue!",
+    "successSub": "Nous vous répondrons dans les 24 heures.",
+    "submitAnother": "Soumettre une autre",
+    "nameRequired": "Requis.",
+    "emailRequired": "Courriel valide requis.",
+    "phoneRequired": "Requis.",
+    "serviceRequired": "Veuillez sélectionner un service.",
+    "serviceOptions": [
+      { "value": "air-duct-cleaning", "label": "Nettoyage de Conduits d'Air" },
+      { "value": "air-exchanger-cleaning", "label": "Nettoyage d'Échangeur d'Air" },
+      { "value": "heat-pump-cleaning", "label": "Nettoyage de Pompe à Chaleur" },
+      { "value": "dryer-vent-cleaning", "label": "Nettoyage d'Évent de Sécheuse" },
+      { "value": "furnace-blower-cleaning", "label": "Nettoyage du Souffleur de Fournaise" },
+      { "value": "central-vacuum-cleaning", "label": "Nettoyage d'Aspirateur Central" },
+      { "value": "other", "label": "Autre / Je ne suis pas sûr" }
+    ]
+  }
+}

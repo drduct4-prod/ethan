@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "whatWeDo": "Qué Hacemos",
+    "reviews": "Reseñas",
+    "bookOnline": "Reservar en línea",
+    "contactUs": "Contáctenos",
+    "promoStrong": "Ahorra 10%",
+    "promoRest": "en tu primera reserva de limpieza HVAC!"
+  },
+  "footer": {
+    "tagline": "Respira mejor con Impeccable Solution Duct Cleaning — tus expertos de confianza en limpieza profesional de ductos y ventilación en Montréal.",
+    "quickLinks": "Enlaces Rápidos",
+    "ourServices": "Nuestros Servicios",
+    "contactInfo": "Información de Contacto",
+    "getFreeQuote": "Obtener Cotización Gratis",
+    "copyright": "Air Duct Cleaning Solution. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "links": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "reviews": "Reseñas",
+      "contact": "Contáctenos"
+    }
+  },
+  "hero": {
+    "eyebrow": "Nuestra Especialidad",
+    "h1a": "Limpieza Profesional de",
+    "h1b": "Ductos de Aire",
+    "h1c": "y Ventilación",
+    "h1d": "en Montreal",
+    "h1sub": "y Áreas Circundantes",
+    "descPre1": "Sus expertos de confianza en ",
+    "descBold1": "limpieza de ductos y ventilación",
+    "descMid": " en Montreal. Eliminamos polvo, suciedad y alérgenos para mejorar la ",
+    "descBold2": "calidad del aire interior",
+    "descPost": " y la eficiencia del HVAC — para hogares y negocios de todos los tamaños.",
+    "cta1": "Obtener una Cita",
+    "cta2": "Cotización Gratis",
+    "trust1": "Licenciado y Asegurado",
+    "trust2": "500+ Reseñas de 5 Estrellas",
+    "trust3": "Certificado por NADCA",
+    "formTitle": "Estimado Gratis",
+    "formSub": "Respuesta en 24 horas",
+    "mobileEyebrow": "Obtener un Estimado Gratis",
+    "mobileTitle": "Solicitar Cotización",
+    "mobileSub": "Responderemos en 24 horas."
+  },
+  "servicesSection": {
+    "eyebrow": "Qué Hacemos",
+    "heading1": "Servicios Profesionales",
+    "heading2": "para el Hogar",
+    "heading3": "En los que Puede Confiar",
+    "desc": "Desde limpieza de ductos y mantenimiento de hornos hasta limpieza de ventiladores de secadora y aspiradoras centrales — cubrimos cada rincón de su hogar con técnicos certificados y satisfacción garantizada.",
+    "stat1Val": "500+",
+    "stat1Label": "Reseñas de cinco estrellas",
+    "stat2Val": "12 años",
+    "stat2Label": "En el negocio",
+    "stat3Val": "100%",
+    "stat3Label": "Tasa de satisfacción",
+    "notSure": "¿No sabe qué servicio necesita?",
+    "talkFree": "Hable con nosotros gratis",
+    "bookOnline": "Reservar en Línea",
+    "getQuote": "Obtener Cotización",
+    "list": {
+      "air-duct-cleaning": {
+        "title": "Limpieza de Ductos de Aire",
+        "shortTitle": "Ductos de Aire",
+        "description": "Eliminamos polvo, suciedad y alérgenos de su sistema de ductos para mejorar la calidad del aire y la eficiencia energética.",
+        "bullets": ["Elimina alérgenos y moho", "Mejora la eficiencia HVAC", "Inspección antes y después"]
+      },
+      "air-exchanger-cleaning": {
+        "title": "Limpieza de Intercambiador de Aire",
+        "shortTitle": "Intercambiador",
+        "description": "Nuestro servicio asegura que su sistema de ventilación funcione correctamente y previene la acumulación de moho y bacterias.",
+        "bullets": ["Previene moho y bacterias", "Optimiza el flujo de aire", "Extiende la vida útil"]
+      },
+      "heat-pump-cleaning": {
+        "title": "Limpieza de Bomba de Calor",
+        "shortTitle": "Bomba de Calor",
+        "description": "Limpieza profunda de bobinas, filtros y componentes para mejorar el rendimiento de su bomba de calor y reducir costos energéticos.",
+        "bullets": ["Limpieza profunda de bobinas", "Reduce facturas de energía", "Todas las marcas"]
+      },
+      "dryer-vent-cleaning": {
+        "title": "Limpieza de Ventilador de Secadora",
+        "shortTitle": "Ventilador Secadora",
+        "description": "La acumulación de pelusa puede ser un peligro de incendio. Nuestra limpieza profesional garantiza un flujo de aire seguro y eficiente.",
+        "bullets": ["Prevención de incendios", "Ciclos de secado más rápidos", "Camino de escape sin pelusa"]
+      },
+      "furnace-blower-cleaning": {
+        "title": "Limpieza del Soplador del Horno",
+        "shortTitle": "Soplador del Horno",
+        "description": "La limpieza a fondo mejora el rendimiento de la calefacción, reduce el consumo de energía y prolonga la vida del sistema.",
+        "bullets": ["Mejora la salida de calor", "Reduce el uso de energía", "Extiende la vida del equipo"]
+      },
+      "central-vacuum-cleaning": {
+        "title": "Limpieza de Aspiradora Central",
+        "shortTitle": "Aspiradora Central",
+        "description": "Limpiamos el polvo y los desechos atrapados para restaurar la succión completa y mantener su hogar libre de alérgenos.",
+        "bullets": ["Succión completamente restaurada", "Hogar libre de alérgenos", "Todas las marcas"]
+      }
+    }
+  },
+  "contact": {
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Juan García",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "+1 (514) 000-0000",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "juan@ejemplo.com",
+    "serviceLabel": "Servicio",
+    "selectService": "Seleccione un servicio…",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Detalles sobre su hogar o última limpieza…",
+    "optional": "opcional",
+    "submit": "Obtener Cotización Gratis",
+    "noSpam": "Sin spam — solo le contactaremos sobre su solicitud.",
+    "successTitle": "¡Solicitud recibida!",
+    "successSub": "Nos comunicaremos en 24 horas.",
+    "submitAnother": "Enviar otra",
+    "nameRequired": "Requerido.",
+    "emailRequired": "Se requiere un correo válido.",
+    "phoneRequired": "Requerido.",
+    "serviceRequired": "Por favor seleccione un servicio.",
+    "serviceOptions": [
+      { "value": "air-duct-cleaning", "label": "Limpieza de Ductos de Aire" },
+      { "value": "air-exchanger-cleaning", "label": "Limpieza de Intercambiador de Aire" },
+      { "value": "heat-pump-cleaning", "label": "Limpieza de Bomba de Calor" },
+      { "value": "dryer-vent-cleaning", "label": "Limpieza de Ventilador de Secadora" },
+      { "value": "furnace-blower-cleaning", "label": "Limpieza del Soplador del Horno" },
+      { "value": "central-vacuum-cleaning", "label": "Limpieza de Aspiradora Central" },
+      { "value": "other", "label": "Otro / No estoy seguro" }
+    ]
+  }
+}

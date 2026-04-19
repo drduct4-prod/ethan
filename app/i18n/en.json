@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "services": "Services",
+    "whatWeDo": "What We Do",
+    "reviews": "Reviews",
+    "bookOnline": "Book online",
+    "contactUs": "Contact Us",
+    "promoStrong": "Save 10%",
+    "promoRest": "on your first HVAC Cleaning booking!"
+  },
+  "footer": {
+    "tagline": "Breathe easier with Impeccable Solution Duct Cleaning — your trusted experts for professional air duct and vent cleaning across Montréal.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactInfo": "Contact Info",
+    "getFreeQuote": "Get a Free Quote",
+    "copyright": "Air Duct Cleaning Solution. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "reviews": "Reviews",
+      "contact": "Contact Us"
+    }
+  },
+  "hero": {
+    "eyebrow": "Our Speciality",
+    "h1a": "Professional",
+    "h1b": "Air Duct",
+    "h1c": "& Vent Cleaning",
+    "h1d": "in Montreal",
+    "h1sub": "and Surrounding Areas",
+    "descPre1": "Your trusted experts for ",
+    "descBold1": "air duct and vent cleaning",
+    "descMid": " across Montreal. We remove dust, debris & allergens to improve ",
+    "descBold2": "indoor air quality",
+    "descPost": " and HVAC efficiency — for homes and businesses of every size.",
+    "cta1": "Get an Appointment",
+    "cta2": "Get a Free Quote",
+    "trust1": "Licensed & Insured",
+    "trust2": "500+ Five-Star Reviews",
+    "trust3": "NADCA Certified",
+    "formTitle": "Free Estimate",
+    "formSub": "Response within 24 hours",
+    "mobileEyebrow": "Get a Free Estimate",
+    "mobileTitle": "Request a Quote",
+    "mobileSub": "We'll respond within 24 hours."
+  },
+  "servicesSection": {
+    "eyebrow": "What We Do",
+    "heading1": "Professional",
+    "heading2": "Home Services",
+    "heading3": "You Can Trust",
+    "desc": "From air duct cleaning and furnace maintenance to dryer vent and central vacuum services — we cover every corner of your home with certified technicians and guaranteed satisfaction.",
+    "stat1Val": "500+",
+    "stat1Label": "Five-star reviews",
+    "stat2Val": "12 yrs",
+    "stat2Label": "In business",
+    "stat3Val": "100%",
+    "stat3Label": "Satisfaction rate",
+    "notSure": "Not sure which service you need?",
+    "talkFree": "Talk to us free",
+    "bookOnline": "Book Online",
+    "getQuote": "Get a Quote",
+    "list": {
+      "air-duct-cleaning": {
+        "title": "Air Duct Cleaning",
+        "shortTitle": "Air Duct",
+        "description": "We remove dust, dirt, and allergens from your duct system to improve air quality and energy efficiency.",
+        "bullets": ["Removes allergens & mold", "Boosts HVAC efficiency", "Before & after inspection"]
+      },
+      "air-exchanger-cleaning": {
+        "title": "Air Exchanger Cleaning",
+        "shortTitle": "Air Exchanger",
+        "description": "Our air exchanger cleaning service ensures your ventilation system works smoothly and prevents mold and bacteria buildup.",
+        "bullets": ["Prevents mold & bacteria", "Optimizes airflow", "Extends system lifespan"]
+      },
+      "heat-pump-cleaning": {
+        "title": "Heat Pump Cleaning",
+        "shortTitle": "Heat Pump",
+        "description": "Deep-clean coils, filters, and components to enhance your heat pump's performance and reduce energy costs.",
+        "bullets": ["Coil & filter deep clean", "Reduces energy bills", "All brands serviced"]
+      },
+      "dryer-vent-cleaning": {
+        "title": "Dryer Vent Cleaning",
+        "shortTitle": "Dryer Vent",
+        "description": "Lint buildup can be a fire hazard. Our professional cleaning ensures safe and efficient airflow for your dryer.",
+        "bullets": ["Fire hazard prevention", "Faster drying cycles", "Lint-free exhaust path"]
+      },
+      "furnace-blower-cleaning": {
+        "title": "Furnace Blower Cleaning",
+        "shortTitle": "Furnace Blower",
+        "description": "Thorough cleaning improves heating performance, lowers energy use, and extends your furnace system's life.",
+        "bullets": ["Improves heat output", "Lowers energy use", "Extends equipment life"]
+      },
+      "central-vacuum-cleaning": {
+        "title": "Central Vacuum Cleaning",
+        "shortTitle": "Central Vacuum",
+        "description": "Clean trapped dust and debris to restore full suction and keep your home allergen-free all year round.",
+        "bullets": ["Full suction restored", "Allergen-free home", "All vacuum brands"]
+      }
+    }
+  },
+  "contact": {
+    "nameLabel": "Name",
+    "namePlaceholder": "John Smith",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+1 (514) 000-0000",
+    "emailLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "serviceLabel": "Service",
+    "selectService": "Select a service…",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Any details about your home or last cleaning…",
+    "optional": "optional",
+    "submit": "Get Free Quote",
+    "noSpam": "No spam — we'll only contact you about your request.",
+    "successTitle": "Request received!",
+    "successSub": "We'll reach out within 24 hours.",
+    "submitAnother": "Submit another",
+    "nameRequired": "Required.",
+    "emailRequired": "Valid email required.",
+    "phoneRequired": "Required.",
+    "serviceRequired": "Please select a service.",
+    "serviceOptions": [
+      { "value": "air-duct-cleaning", "label": "Air Duct Cleaning" },
+      { "value": "air-exchanger-cleaning", "label": "Air Exchanger Cleaning" },
+      { "value": "heat-pump-cleaning", "label": "Heat Pump Cleaning" },
+      { "value": "dryer-vent-cleaning", "label": "Dryer Vent Cleaning" },
+      { "value": "furnace-blower-cleaning", "label": "Furnace Blower Cleaning" },
+      { "value": "central-vacuum-cleaning", "label": "Central Vacuum Cleaning" },
+      { "value": "other", "label": "Other / Not Sure" }
+    ]
+  }
+}
