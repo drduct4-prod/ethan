@@ -32,14 +32,38 @@ export default function Contact({ compact = false }) {
     if (errors[name]) setErrors((p) => ({ ...p, [name]: undefined }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errs = validate();
-    if (Object.keys(errs).length) { setErrors(errs); return; }
-    setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 1400));
-    setStatus("success");
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const errs = validate();
+  if (Object.keys(errs).length) {
+    setErrors(errs);
+    return;
+  }
+
+  setStatus("submitting");
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setStatus("success");
+    } else {
+      setStatus("idle");
+    }
+  } catch (error) {
+    console.log(error);
+    setStatus("idle");
+  }
+};
 
   if (status === "success") {
     return (
