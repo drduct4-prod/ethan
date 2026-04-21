@@ -78,14 +78,14 @@ export default function FurnaceBlowerCleaningPage() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              A dirty blower wheel reduces airflow by 30% and is the leading cause 
-              of motor burnout. We perform deep-fin restoration and balance 
-              calibration to keep your system silent and efficient.
+              A dirty blower wheel reduces airflow by 30% and is the leading
+              cause of motor burnout. We perform deep-fin restoration and
+              balance calibration to keep your system silent and efficient.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Book Blower Service <ArrowRight className="h-5 w-5" />
@@ -119,9 +119,9 @@ export default function FurnaceBlowerCleaningPage() {
                 The Core of Your Air Delivery
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                The blower assembly is the heart that pumps air through your vents. 
-                Accumulated dust on the "squirrel cage" creates drag and centrifugal 
-                imbalance, leading to mechanical failure.
+                The blower assembly is the heart that pumps air through your
+                vents. Accumulated dust on the "squirrel cage" creates drag and
+                centrifugal imbalance, leading to mechanical failure.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -252,7 +252,7 @@ export default function FurnaceBlowerCleaningPage() {
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                 <div className="absolute inset-0 bg-linear-to-br from-[#5E7AC4]/20 to-transparent" />
                 <Image
-                  src="/images/furnace-blower-wheel.jpg"
+                  src="/services_images/s5.png"
                   alt="Furnace Blower Wheel Maintenance and Disassembly"
                   fill
                   className="object-cover opacity-90"

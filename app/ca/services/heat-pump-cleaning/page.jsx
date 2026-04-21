@@ -78,14 +78,14 @@ export default function HeatPumpCleaningPageCA() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              Don't let ice or debris drive up your hydro bills. Our specialist 
-              deep-coil cleaning ensures your heat pump maintains maximum thermal 
-              output even during the harshest Canadian winters.
+              Don't let ice or debris drive up your hydro bills. Our specialist
+              deep-coil cleaning ensures your heat pump maintains maximum
+              thermal output even during the harshest Canadian winters.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Book Your Tune-Up <ArrowRight className="h-5 w-5" />
@@ -119,9 +119,9 @@ export default function HeatPumpCleaningPageCA() {
                 Maximising Heat Exchange
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Heat pumps rely on efficient air flow. Even a minor buildup 
-                of grime or oxidation on your coils can force your compressor 
-                to overwork, leading to high bills and system stress.
+                Heat pumps rely on efficient air flow. Even a minor buildup of
+                grime or oxidation on your coils can force your compressor to
+                overwork, leading to high bills and system stress.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +166,8 @@ export default function HeatPumpCleaningPageCA() {
               The 5-Point Tune-Up
             </h2>
             <p className="text-gray-500 text-lg">
-              A comprehensive service protocol designed for year-round reliability.
+              A comprehensive service protocol designed for year-round
+              reliability.
             </p>
           </div>
 
@@ -251,7 +252,7 @@ export default function HeatPumpCleaningPageCA() {
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/heat-pump-service.jpg"
+                  src="/services_images/s6.png"
                   alt="Heat Pump Service Canada"
                   fill
                   className="object-cover opacity-90"

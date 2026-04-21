@@ -78,14 +78,14 @@ export default function DryerVentCleaningPage() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              A clogged dryer vent is more than an inconvenience—it's a leading 
-              cause of house fires. We utilize high-velocity suction and rotary 
+              A clogged dryer vent is more than an inconvenience—it's a leading
+              cause of house fires. We utilize high-velocity suction and rotary
               brushing to clear 100% of flammable lint buildup.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Schedule Vent Cleaning <ArrowRight className="h-5 w-5" />
@@ -119,9 +119,9 @@ export default function DryerVentCleaningPage() {
                 Why Professional Cleaning is Critical
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Lint traps only catch about 25% of debris. The rest settles 
-                in your vent pipe, restricting airflow and forcing your dryer 
-                to overheat—wasting energy and risking your safety.
+                Lint traps only catch about 25% of debris. The rest settles in
+                your vent pipe, restricting airflow and forcing your dryer to
+                overheat—wasting energy and risking your safety.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +166,8 @@ export default function DryerVentCleaningPage() {
               Our Multi-Stage Cleaning Protocol
             </h2>
             <p className="text-gray-500 text-lg">
-              We clean from the dryer to the exit terminal to ensure zero residual blockage.
+              We clean from the dryer to the exit terminal to ensure zero
+              residual blockage.
             </p>
           </div>
 
@@ -252,7 +253,7 @@ export default function DryerVentCleaningPage() {
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                 <div className="absolute inset-0 bg-linear-to-tr from-red-500/10 to-transparent" />
                 <Image
-                  src="/images/dryer-vent-lint.jpg"
+                  src="/services_images/s4.png"
                   alt="Professional Dryer Vent Lint Removal"
                   fill
                   className="object-cover opacity-80"

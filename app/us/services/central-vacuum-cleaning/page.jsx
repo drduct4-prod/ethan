@@ -78,14 +78,14 @@ export default function CentralVacuumCleaningPage() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              Hidden debris in your central vacuum's piping reduces efficiency 
-              and harbor allergens. We provide a complete professional system 
+              Hidden debris in your central vacuum's piping reduces efficiency
+              and harbor allergens. We provide a complete professional system
               purge to restore 100% factory-level performance.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Restore My Suction <ArrowRight className="h-5 w-5" />
@@ -119,9 +119,9 @@ export default function CentralVacuumCleaningPage() {
                 Hidden Lines, Invisible Dust
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Miles of piping behind your walls can accumulate fine dust 
-                due to static electricity. This buildup restricts airflow, 
-                strains your motor, and reduces your vacuum’s lifespan.
+                Miles of piping behind your walls can accumulate fine dust due
+                to static electricity. This buildup restricts airflow, strains
+                your motor, and reduces your vacuum’s lifespan.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +166,8 @@ export default function CentralVacuumCleaningPage() {
               Our Multi-Point Purge Process
             </h2>
             <p className="text-gray-500 text-lg">
-              We utilize professional-grade pneumatic tools to scrub your lines from the inside out.
+              We utilize professional-grade pneumatic tools to scrub your lines
+              from the inside out.
             </p>
           </div>
 
@@ -252,7 +253,7 @@ export default function CentralVacuumCleaningPage() {
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                 <div className="absolute inset-0 bg-linear-to-br from-[#5E7AC4]/20 to-transparent" />
                 <Image
-                  src="/images/central-vac-service.jpg"
+                  src="/services_images/s3.png"
                   alt="Professional Central Vacuum System Maintenance"
                   fill
                   className="object-cover opacity-90"

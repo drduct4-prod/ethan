@@ -78,14 +78,15 @@ export default function DryerVentCleaningPageCA() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              A clogged dryer vent is one of the leading causes of residential fires in Canada. 
-              We use industrial-grade suction and mechanical brushing to clear flammable lint 
-              buildup and restore your dryer's efficiency.
+              A clogged dryer vent is one of the leading causes of residential
+              fires in Canada. We use industrial-grade suction and mechanical
+              brushing to clear flammable lint buildup and restore your dryer's
+              efficiency.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Schedule Vent Cleaning <ArrowRight className="h-5 w-5" />
@@ -119,9 +120,9 @@ export default function DryerVentCleaningPageCA() {
                 Beyond Just Lint
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Moisture trapped by lint can lead to mould growth inside your walls. 
-                Our service ensures a clear path for hot air and humidity to exit 
-                your home safely.
+                Moisture trapped by lint can lead to mould growth inside your
+                walls. Our service ensures a clear path for hot air and humidity
+                to exit your home safely.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +167,8 @@ export default function DryerVentCleaningPageCA() {
               Our Multi-Step Protocol
             </h2>
             <p className="text-gray-500 text-lg">
-              We clean from both the interior and exterior for a 100% clear passage.
+              We clean from both the interior and exterior for a 100% clear
+              passage.
             </p>
           </div>
 
@@ -251,7 +253,7 @@ export default function DryerVentCleaningPageCA() {
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                 <Image
-                  src="/images/dryer-vent-lint.jpg"
+                  src="/services_images/s4.png"
                   alt="Dryer Vent Service Canada"
                   fill
                   className="object-cover opacity-80"

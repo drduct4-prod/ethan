@@ -78,14 +78,14 @@ export default function AirExchangerCleaning() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              We specialize in deep-cleaning Fresh Air Ventilation systems. By 
-              optimizing your HRV/ERV core, we ensure your home breathes 
+              We specialize in deep-cleaning Fresh Air Ventilation systems. By
+              optimizing your HRV/ERV core, we ensure your home breathes
               filtered, oxygen-rich air while exhausting indoor pollutants.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Book Your Service <ArrowRight className="h-5 w-5" />
@@ -119,9 +119,9 @@ export default function AirExchangerCleaning() {
                 Restore Your System's Core Efficiency
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                A dirty air exchanger doesn't just waste energy—it traps 
-                stale air and allergens inside. Our specialized cleaning 
-                restores factory-spec ventilation to your home.
+                A dirty air exchanger doesn't just waste energy—it traps stale
+                air and allergens inside. Our specialized cleaning restores
+                factory-spec ventilation to your home.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +166,8 @@ export default function AirExchangerCleaning() {
               Our Professional Protocol
             </h2>
             <p className="text-gray-500 text-lg">
-              We don't just "dust" the unit; we perform a comprehensive engineering reset.
+              We don't just "dust" the unit; we perform a comprehensive
+              engineering reset.
             </p>
           </div>
 
@@ -252,7 +253,7 @@ export default function AirExchangerCleaning() {
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gray-800 animate-pulse" />
                 <Image
-                  src="/images/air-exchanger-cleaning.jpg"
+                  src="/services_images/s2.png"
                   alt="Professional Air Exchanger Service"
                   fill
                   className="object-cover"

@@ -78,14 +78,14 @@ export default function HeatPumpCleaningPage() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              Don't let grime drive up your utility bills. Our professional 
-              deep-coil sanitization and system calibration ensure your heat pump 
-              runs at factory-spec efficiency all year round.
+              Don't let grime drive up your utility bills. Our professional
+              deep-coil sanitization and system calibration ensure your heat
+              pump runs at factory-spec efficiency all year round.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Schedule System Tune-Up <ArrowRight className="h-5 w-5" />
@@ -119,9 +119,10 @@ export default function HeatPumpCleaningPage() {
                 Protect Your HVAC Investment
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Heat pumps rely on seamless heat exchange. Even a thin layer 
-                of oxidation or dust on your coils forces the compressor to work 
-                twice as hard, leading to sky-high bills and premature equipment failure.
+                Heat pumps rely on seamless heat exchange. Even a thin layer of
+                oxidation or dust on your coils forces the compressor to work
+                twice as hard, leading to sky-high bills and premature equipment
+                failure.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +167,8 @@ export default function HeatPumpCleaningPage() {
               Our 5-Point Performance Audit
             </h2>
             <p className="text-gray-500 text-lg">
-              A comprehensive engineering reset for both indoor air handlers and outdoor condenser units.
+              A comprehensive engineering reset for both indoor air handlers and
+              outdoor condenser units.
             </p>
           </div>
 
@@ -252,7 +254,7 @@ export default function HeatPumpCleaningPage() {
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                 <div className="absolute inset-0 bg-linear-to-br from-[#5E7AC4]/10 to-transparent" />
                 <Image
-                  src="/images/heat-pump-service.jpg"
+                  src="/services_images/s6.png"
                   alt="Professional Heat Pump Cleaning and Maintenance"
                   fill
                   className="object-cover opacity-90"

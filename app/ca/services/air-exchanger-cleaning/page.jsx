@@ -78,14 +78,15 @@ export default function AirExchangerCleaningCA() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              In modern Canadian homes, your Air Exchanger is your lifeline to fresh air. 
-              We provide expert decontamination of HRV/ERV cores and filters to 
-              ensure your indoor air is fresh, crisp, and properly humidified.
+              In modern Canadian homes, your Air Exchanger is your lifeline to
+              fresh air. We provide expert decontamination of HRV/ERV cores and
+              filters to ensure your indoor air is fresh, crisp, and properly
+              humidified.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Schedule HRV Service <ArrowRight className="h-5 w-5" />
@@ -119,9 +120,9 @@ export default function AirExchangerCleaningCA() {
                 Optimising Your Thermal Core
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Neglected air exchangers often become breeding grounds for bacteria and 
-                excess humidity. Our restoration process ensures your unit operates 
-                at peak thermal efficiency.
+                Neglected air exchangers often become breeding grounds for
+                bacteria and excess humidity. Our restoration process ensures
+                your unit operates at peak thermal efficiency.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +167,8 @@ export default function AirExchangerCleaningCA() {
               The Canadian Service Standard
             </h2>
             <p className="text-gray-500 text-lg">
-              We follow a rigorous protocol to reset your ventilation system to factory-spec.
+              We follow a rigorous protocol to reset your ventilation system to
+              factory-spec.
             </p>
           </div>
 
@@ -252,7 +254,7 @@ export default function AirExchangerCleaningCA() {
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gray-800" />
                 <Image
-                  src="/images/air-exchanger-cleaning.jpg"
+                  src="/services_images/s2.png"
                   alt="Canadian HRV Service"
                   fill
                   className="object-cover opacity-90"

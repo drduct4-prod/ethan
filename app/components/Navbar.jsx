@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import gsap from "gsap";
 import {
   Wind, RefreshCw, Thermometer, Shirt, Fan, Gauge,
-  ChevronDown, ChevronUp, Menu, X, Globe,
+  ChevronDown, ChevronUp, Menu, X, Globe, MapPin,
 } from "lucide-react";
 import { urbanist, inter } from "../fonts";
 import Image from "next/image";
@@ -20,7 +20,7 @@ const COUNTRY_CONFIG = {
 
 const DEFAULT_COUNTRY = "us";
 
-// Static data — text pulled from translations at render time
+// ─── Services config ──────────────────────────────────────────
 const SERVICE_SLUGS = [
   { slug: "air-duct-cleaning",       href: "/services/air-duct-cleaning",       icon: Wind },
   { slug: "air-exchanger-cleaning",  href: "/services/air-exchanger-cleaning",  icon: RefreshCw },
@@ -30,10 +30,89 @@ const SERVICE_SLUGS = [
   { slug: "central-vacuum-cleaning", href: "/services/central-vacuum-cleaning", icon: Gauge },
 ];
 
+// ─── Areas config ─────────────────────────────────────────────
+const AREAS_CONFIG = [
+  {
+    country: "ca",
+    label: "Canada",
+    flag : "ca_flag.png",
+    provinces: [
+      {
+        label: "Ontario", slug: "ontario",
+        cities: [
+          "Toronto","Oshawa","Whitby","Ajax","Pickering","New Market","Vaughn",
+          "Richmond Hill","Markham","Brampton","Mississauga","North York","Bradford",
+          "Keswick","Barrie","Aurora","East Gwillimbury","Oakville","Burlington",
+          "Hamilton","Brantford","Kitchener","Cambridge","Waterloo","Guelph",
+          "St Catharines","Niagara Falls","Welland","Woodstock","St. Thomas","London",
+          "Windsor","Essex","Amherstburg","Kingsville","Lakeshore","LaSalle",
+          "Tilbury","Chatham","Ottawa",
+        ],
+      },
+      {
+        label: "Quebec", slug: "quebec",
+        cities: [
+          "Montreal","Saint Therese","Saint Jerome","Mascouche","L'Assomption",
+          "Sainte-Anne-des-Plaines","Laval","Rosemere","Boisbriand","Saint Eustache",
+          "Mirabel","Sainte-Colomban","Brossard","Longueuil","Boucherville","Beloeil",
+          "St-Bruno-de-Montarville","Saint Hubert","Saint Lambert","Candiac",
+          "Sainte Catherine","Chateauguay","Delson","Saint Constant","Chambly",
+          "Kahnawake","Saint Jean Sur Richelieu","Marieville","Sainte Julie",
+          "Saint Hyacinthe",
+        ],
+      },
+      {
+        label: "British Columbia", slug: "british-columbia",
+        cities: ["Vancouver","North Vancouver","West Vancouver","Surrey","Burnaby","Richmond","Coquitlam"],
+      },
+      {
+        label: "Alberta", slug: "alberta",
+        cities: ["Calgary","Edmonton"],
+      },
+      {
+        label: "Manitoba", slug: "manitoba",
+        cities: ["Winnipeg"],
+      },
+    ],
+  },
+  {
+    country: "us",
+    label: "USA",
+    flag : "us_flag.png",
+    provinces: [
+      { label: "Texas",                       slug: "texas",                    cities: ["Dallas","Austin","San Antonio","Houston"] },
+      { label: "Florida",                     slug: "florida",                  cities: ["Pensacola","Naples","Sarasota","Tampa","Orlando","Miami","Jacksonville","Palm Beach","Tallahassee"] },
+      { label: "Virginia",                    slug: "virginia",                 cities: ["Alexandria","Woodbridge","Richmond","Norfolk"] },
+      { label: "Maryland",                    slug: "maryland",                 cities: ["Baltimore"] },
+      { label: "Arizona",                     slug: "arizona",                  cities: ["Phoenix","Tucson"] },
+      { label: "Colorado",                    slug: "colorado",                 cities: ["Denver","Colorado Springs"] },
+      { label: "New Jersey",                  slug: "new-jersey",               cities: ["Jersey City","Red Bank"] },
+      { label: "New York",                    slug: "new-york",                 cities: ["New York City","Long Island"] },
+      { label: "Pennsylvania",                slug: "pennsylvania",             cities: ["Philadelphia","Pittsburgh"] },
+      { label: "California",                  slug: "california",               cities: ["Los Angeles","Sacramento","Fresno","San Diego","San Jose"] },
+      { label: "Illinois",                    slug: "illinois",                 cities: ["Chicago"] },
+      { label: "Indiana",                     slug: "indiana",                  cities: ["Indianapolis","South Bend","Fort Wayne"] },
+      { label: "Michigan",                    slug: "michigan",                 cities: ["Detroit"] },
+      { label: "Georgia",                     slug: "georgia",                  cities: ["Atlanta"] },
+      { label: "Washington",                  slug: "washington",               cities: ["Seattle"] },
+      { label: "Missouri / Kansas",           slug: "missouri-kansas",          cities: ["Kansas City MO","St. Louis MO","Kansas City KS"] },
+      { label: "Utah",                        slug: "utah",                     cities: ["Salt Lake City"] },
+      { label: "Massachusetts",               slug: "massachusetts",            cities: ["Boston"] },
+      { label: "North Carolina / South Carolina", slug: "north-south-carolina", cities: ["Charlotte","Raleigh","Durham"] },
+    ],
+  },
+];
+
+function toCitySlug(city) {
+  return city.toLowerCase().replace(/[\s./]+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
+
+// ─── Nav links ────────────────────────────────────────────────
 const NAV_LINKS = [
-  { key: "services",   href: "#",           isDropdown: true },
-  { key: "whatWeDo",   href: "#what-we-do", isAnchor: true },
-  { key: "reviews",    href: "#reviews",    isAnchor: true },
+  { key: "services",      href: "#",           isDropdown: true },
+  { key: "areas",         href: "#",           isAreasDropdown: true },
+  { key: "whatWeDo",      href: "#what-we-do", isAnchor: true },
+  { key: "reviews",       href: "#reviews",    isAnchor: true },
 ];
 
 const LANG_OPTIONS = [
@@ -97,21 +176,34 @@ export default function Navbar() {
   }, []);
 
   // ── UI state ──────────────────────────────
-  const [dropdownOpen, setDropdownOpen]               = useState(false);
-  const [mobileOpen, setMobileOpen]                   = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen]   = useState(false);
+  const [dropdownOpen, setDropdownOpen]             = useState(false);
+  const [areasDropdownOpen, setAreasDropdownOpen]   = useState(false);
+  const [mobileOpen, setMobileOpen]                 = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileAreasOpen, setMobileAreasOpen]       = useState(false);
 
-  // ── Refs ──────────────────────────────────
+  // ── Refs: services dropdown ───────────────
   const dropdownWrapRef   = useRef(null);
   const dropdownPanelRef  = useRef(null);
   const dropdownCardsRef  = useRef(null);
+  const leaveTimerRef     = useRef(null);
+  const dropdownInitRef   = useRef(false);
+
+  // ── Refs: areas dropdown ──────────────────
+  const areasWrapRef      = useRef(null);
+  const areasPanelRef     = useRef(null);
+  const areasLeaveTimer   = useRef(null);
+  const areasInitRef      = useRef(false);
+
+  // ── Refs: mobile ──────────────────────────
   const mobileMenuRef     = useRef(null);
   const mobileOverlayRef  = useRef(null);
   const mobileServicesRef = useRef(null);
-  const leaveTimerRef     = useRef(null);
-  const dropdownInitRef   = useRef(false);
+  const mobileAreasRef    = useRef(null);
+
+  // ── Refs: header dropdowns ────────────────
   const countryDropdownRef = useRef(null);
-  const langDropdownRef   = useRef(null);
+  const langDropdownRef    = useRef(null);
 
   // ── Close dropdowns on outside click ──────
   useEffect(() => {
@@ -134,10 +226,10 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handler);
   }, [langDropdownOpen]);
 
-  // ── Desktop dropdown GSAP init ────────────
+  // ── Desktop: services dropdown GSAP init ──
   useEffect(() => {
     if (!dropdownWrapRef.current || !dropdownPanelRef.current) return;
-    gsap.set(dropdownWrapRef.current, { height: 0, overflow: "hidden" });
+    gsap.set(dropdownWrapRef.current,  { height: 0, overflow: "hidden" });
     gsap.set(dropdownPanelRef.current, { y: "-100%" });
     dropdownInitRef.current = true;
   }, []);
@@ -179,6 +271,44 @@ export default function Navbar() {
     gsap.set(dropdownPanelRef.current, { y: "-100%" });
   };
 
+  // ── Desktop: areas dropdown GSAP init ─────
+  useEffect(() => {
+    if (!areasWrapRef.current || !areasPanelRef.current) return;
+    gsap.set(areasWrapRef.current,  { height: 0, overflow: "hidden" });
+    gsap.set(areasPanelRef.current, { y: "-100%" });
+    areasInitRef.current = true;
+  }, []);
+
+  const openAreasDropdown = () => {
+    if (!areasInitRef.current) return;
+    clearTimeout(areasLeaveTimer.current);
+    setAreasDropdownOpen(true);
+    gsap.killTweensOf(areasWrapRef.current);
+    gsap.killTweensOf(areasPanelRef.current);
+    gsap.to(areasWrapRef.current,  { height: "auto", duration: 0.38, ease: "power3.out" });
+    gsap.to(areasPanelRef.current, { y: "0%",        duration: 0.38, ease: "power3.out" });
+  };
+
+  const closeAreasDropdown = () => {
+    if (!areasInitRef.current) return;
+    areasLeaveTimer.current = setTimeout(() => {
+      setAreasDropdownOpen(false);
+      gsap.killTweensOf(areasWrapRef.current);
+      gsap.killTweensOf(areasPanelRef.current);
+      gsap.to(areasPanelRef.current, { y: "-100%", duration: 0.26, ease: "power2.in" });
+      gsap.to(areasWrapRef.current,  { height: 0,   duration: 0.28, ease: "power2.in", delay: 0.04 });
+    }, 90);
+  };
+
+  const dismissAreasDropdown = () => {
+    if (!areasInitRef.current) return;
+    setAreasDropdownOpen(false);
+    gsap.killTweensOf(areasWrapRef.current);
+    gsap.killTweensOf(areasPanelRef.current);
+    gsap.set(areasWrapRef.current,  { height: 0 });
+    gsap.set(areasPanelRef.current, { y: "-100%" });
+  };
+
   // ── Mobile GSAP ───────────────────────────
   useEffect(() => {
     if (!mobileMenuRef.current || !mobileOverlayRef.current) return;
@@ -191,11 +321,11 @@ export default function Navbar() {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
       gsap.set(mobileOverlayRef.current, { pointerEvents: "auto" });
-      gsap.to(mobileOverlayRef.current, { opacity: 1,    duration: 0.28, ease: "power2.out" });
-      gsap.to(mobileMenuRef.current,    { x: "0%",       duration: 0.36, ease: "power3.out" });
+      gsap.to(mobileOverlayRef.current, { opacity: 1,  duration: 0.28, ease: "power2.out" });
+      gsap.to(mobileMenuRef.current,    { x: "0%",     duration: 0.36, ease: "power3.out" });
     } else {
       document.body.style.overflow = "";
-      gsap.to(mobileMenuRef.current,    { x: "100%",     duration: 0.28, ease: "power2.in" });
+      gsap.to(mobileMenuRef.current,    { x: "100%",   duration: 0.28, ease: "power2.in" });
       gsap.to(mobileOverlayRef.current, {
         opacity: 0, duration: 0.24, ease: "power2.in",
         onComplete: () => gsap.set(mobileOverlayRef.current, { pointerEvents: "none" }),
@@ -215,6 +345,18 @@ export default function Navbar() {
       gsap.to(mobileServicesRef.current, { height: 0, opacity: 0, duration: 0.22, ease: "power2.in" });
     }
   }, [mobileServicesOpen]);
+
+  useEffect(() => {
+    if (!mobileAreasRef.current) return;
+    if (mobileAreasOpen) {
+      gsap.fromTo(mobileAreasRef.current,
+        { height: 0, opacity: 0 },
+        { height: "auto", opacity: 1, duration: 0.32, ease: "power3.out" }
+      );
+    } else {
+      gsap.to(mobileAreasRef.current, { height: 0, opacity: 0, duration: 0.22, ease: "power2.in" });
+    }
+  }, [mobileAreasOpen]);
 
   return (
     <>
@@ -298,30 +440,57 @@ export default function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden items-center lg:flex">
-            {NAV_LINKS.map((link) =>
-              link.isDropdown ? (
-                <div key="services-dd" className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
-                  <button
-                    className="relative flex items-center gap-1 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4]"
-                    aria-expanded={dropdownOpen}
+            {NAV_LINKS.map((link) => {
+              if (link.isDropdown) {
+                return (
+                  <div key="services-dd" className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
+                    <button
+                      className="relative flex items-center gap-1 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4]"
+                      aria-expanded={dropdownOpen}
+                    >
+                      {t.nav.services}
+                      {dropdownOpen
+                        ? <ChevronUp   className="h-3.5 w-3.5 text-gray-400 transition-transform duration-200" />
+                        : <ChevronDown className="h-3.5 w-3.5 text-gray-400 transition-transform duration-200" />
+                      }
+                      <span className="absolute -bottom-px left-2 right-2 h-0.5 rounded-full bg-[#5E7AC4] transition-opacity duration-200"
+                        style={{ opacity: dropdownOpen ? 1 : 0 }} />
+                    </button>
+                  </div>
+                );
+              }
+
+              if (link.isAreasDropdown) {
+                return (
+                  <div key="areas-dd" className="relative" onMouseEnter={openAreasDropdown} onMouseLeave={closeAreasDropdown}>
+                    <button
+                      className="relative flex items-center gap-1 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4]"
+                      aria-expanded={areasDropdownOpen}
+                    >
+                      {t.nav?.areas ?? "Areas"}
+                      {areasDropdownOpen
+                        ? <ChevronUp   className="h-3.5 w-3.5 text-gray-400 transition-transform duration-200" />
+                        : <ChevronDown className="h-3.5 w-3.5 text-gray-400 transition-transform duration-200" />
+                      }
+                      <span className="absolute -bottom-px left-2 right-2 h-0.5 rounded-full bg-[#5E7AC4] transition-opacity duration-200"
+                        style={{ opacity: areasDropdownOpen ? 1 : 0 }} />
+                    </button>
+                  </div>
+                );
+              }
+
+              if (link.isAnchor) {
+                return (
+                  <a key={link.href} href={link.href}
+                    onClick={(e) => handleAnchorClick(e, link.href)}
+                    className="relative flex items-center gap-0.75 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4] cursor-pointer"
                   >
-                    {t.nav.services}
-                    {dropdownOpen
-                      ? <ChevronUp   className="h-3.5 w-3.5 text-gray-400 transition-transform duration-200" />
-                      : <ChevronDown className="h-3.5 w-3.5 text-gray-400 transition-transform duration-200" />
-                    }
-                    <span className="absolute -bottom-px left-2 right-2 h-0.5 rounded-full bg-[#5E7AC4] transition-opacity duration-200"
-                      style={{ opacity: dropdownOpen ? 1 : 0 }} />
-                  </button>
-                </div>
-              ) : link.isAnchor ? (
-                <a key={link.href} href={link.href}
-                  onClick={(e) => handleAnchorClick(e, link.href)}
-                  className="relative flex items-center gap-0.75 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4] cursor-pointer"
-                >
-                  {t.nav[link.key]}
-                </a>
-              ) : (
+                    {t.nav[link.key]}
+                  </a>
+                );
+              }
+
+              return (
                 <Link key={link.href} href={withCountry(link.href)}
                   className="relative flex items-center gap-0.75 px-3.5 py-2 text-[20px] font-medium text-gray-100 transition-colors duration-150 hover:text-[#5E7AC4]"
                 >
@@ -330,8 +499,8 @@ export default function Navbar() {
                     <span className="absolute -bottom-px left-2 right-2 h-0.5 rounded-full bg-[#5E7AC4]" />
                   )}
                 </Link>
-              )
-            )}
+              );
+            })}
           </div>
 
           {/* Right side */}
@@ -353,7 +522,7 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* ── Desktop Dropdown ── */}
+        {/* ── Desktop Services Dropdown ── */}
         <div ref={dropdownWrapRef} className="absolute left-0 top-full z-50 w-full"
           onMouseEnter={() => clearTimeout(leaveTimerRef.current)} onMouseLeave={closeDropdown}
           aria-hidden={!dropdownOpen}
@@ -394,6 +563,62 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* ── Desktop Areas Dropdown ── */}
+        <div ref={areasWrapRef} className="absolute left-0 top-full z-50 w-full"
+          onMouseEnter={() => clearTimeout(areasLeaveTimer.current)} onMouseLeave={closeAreasDropdown}
+          aria-hidden={!areasDropdownOpen}
+        >
+          <div ref={areasPanelRef} className="w-full border-t border-gray-100 bg-white shadow-lg">
+            <div className="mx-auto max-w-7xl px-5 py-8 lg:px-10">
+              <div className="grid grid-cols-2 gap-x-14" style={{ maxHeight: "65vh", overflowY: "auto" }}>
+                {AREAS_CONFIG.map((region) => (
+                  <div key={region.country}>
+                    {/* Country heading */}
+                    <div className="mb-5 flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-[#5E7AC4]" strokeWidth={2} />
+                      <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#5E7AC4]">
+                        {region.label} <img className="h-5" src={`/${region.flag}`} alt={`${region.label} flag`} />
+                      </h3>
+                    </div>
+                    <div className="space-y-5">
+                      {region.provinces.map((province) => (
+                        <div key={province.slug}>
+                          {/* Province heading */}
+                          <p className="mb-2 text-[12px] font-bold uppercase tracking-wider text-gray-700 border-b border-gray-100 pb-1">
+                            {province.label} 
+                          </p>
+                          {/* Cities */}
+                          <div className="flex flex-wrap gap-x-2 gap-y-1.5">
+                            {province.cities.map((city) => (
+                              <Link
+                                key={city}
+                                // href={`/${region.country}/areas/${province.slug}/${toCitySlug(city)}`}
+                                href={`#`}
+                                onClick={dismissAreasDropdown}
+                                className="text-[12px] text-gray-500 transition-colors duration-150 hover:text-[#5E7AC4] whitespace-nowrap"
+                              >
+                                {city}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-7 border-t border-gray-100 pt-5">
+                <Link href="/contactus"
+                  className="inline-flex items-center rounded-lg border border-gray-900 px-4 py-2.25 text-[13px] font-semibold text-gray-900 transition-all duration-200 hover:border-[#5E7AC4] hover:bg-[#5E7AC4] hover:text-white"
+                  onClick={dismissAreasDropdown}
+                >
+                  {t.nav.contactUs}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Sweep line */}
         <div aria-hidden="true" style={{ position:"absolute", bottom:0, left:0, right:0, height:"1px", overflow:"hidden", pointerEvents:"none", zIndex:1 }}>
           <div style={{ position:"absolute", top:0, height:"100%", width:"55%", background:"linear-gradient(90deg, transparent 0%, #5E7AC4 35%, #7b96d4 50%, #5E7AC4 65%, transparent 100%)", boxShadow:"0 0 8px #5E7AC4, 0 0 16px #5E7AC480", animation:"navLineSweep 2s linear infinite" }} />
@@ -420,7 +645,6 @@ export default function Navbar() {
 
         {/* Country + Language selectors */}
         <div className="flex items-center justify-between gap-2 px-5 py-3" style={{ borderBottom:"1px solid rgba(255,255,255,0.05)" }}>
-          {/* Country pills */}
           <div className="flex items-center gap-1">
             {Object.entries(COUNTRY_CONFIG).map(([code, cfg]) => (
               <button key={code} onClick={() => handleCountryChange(code)}
@@ -432,7 +656,6 @@ export default function Navbar() {
               </button>
             ))}
           </div>
-          {/* Language pills */}
           <div className="flex items-center gap-1">
             {LANG_OPTIONS.map(({ code, label }) => (
               <button key={code} onClick={() => setLang(code)}
@@ -447,6 +670,7 @@ export default function Navbar() {
 
         {/* Links */}
         <div className="flex-1 overflow-y-auto px-3 py-3">
+
           {/* Services accordion */}
           <div>
             <button
@@ -475,8 +699,55 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Areas accordion */}
+          <div>
+            <button
+              className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+              onClick={() => setMobileAreasOpen((v) => !v)}
+            >
+              {t.nav?.areas ?? "Areas"}
+              <ChevronDown className={`h-4 w-4 text-white/40 transition-transform duration-300 ${mobileAreasOpen ? "rotate-180 text-[#5E7AC4]" : ""}`} />
+            </button>
+            <div ref={mobileAreasRef} className="overflow-hidden" style={{ height:0, opacity:0 }}>
+              <div className="ml-3 pb-2 pl-3" style={{ borderLeft:"1px solid rgba(255,255,255,0.1)" }}>
+                {AREAS_CONFIG.map((region) => (
+                  <div key={region.country} className="mb-3">
+                    {/* Country label */}
+                    <div className="flex items-center gap-1.5 px-3 py-1.5">
+                      <MapPin className="h-3 w-3 text-[#5E7AC4]" strokeWidth={2} />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#5E7AC4]">
+                        {region.label}
+                      </span>
+                    </div>
+                    {region.provinces.map((province) => (
+                      <div key={province.slug} className="mb-2">
+                        {/* Province label */}
+                        <p className="px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white/30">
+                          {province.label}
+                        </p>
+                        {/* Cities */}
+                        <div className="flex flex-wrap gap-1.5 px-3 pb-1">
+                          {province.cities.map((city) => (
+                            <Link
+                              key={city}
+                              href={`/${region.country}/areas/${province.slug}/${toCitySlug(city)}`}
+                              onClick={() => setMobileOpen(false)}
+                              className="rounded-md bg-white/5 px-2 py-1 text-[11px] text-white/55 transition-colors hover:bg-[#5E7AC4]/15 hover:text-[#5E7AC4]"
+                            >
+                              {city}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Other links */}
-          {NAV_LINKS.filter((l) => !l.isDropdown).map((link) =>
+          {NAV_LINKS.filter((l) => !l.isDropdown && !l.isAreasDropdown).map((link) =>
             link.isAnchor ? (
               <a key={link.href} href={link.href}
                 onClick={(e) => { handleAnchorClick(e, link.href); setMobileOpen(false); }}

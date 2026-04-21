@@ -79,14 +79,14 @@ export default function AirDuctCleaningPage() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              We go beyond surface cleaning. Using industrial-grade HEPA filtration, 
-              we eliminate 99.9% of pollutants to ensure your family breathes 
-              cleaner, healthier indoor air.
+              We go beyond surface cleaning. Using industrial-grade HEPA
+              filtration, we eliminate 99.9% of pollutants to ensure your family
+              breathes cleaner, healthier indoor air.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Get a Free Quote <ArrowRight className="h-5 w-5" />
@@ -120,8 +120,8 @@ export default function AirDuctCleaningPage() {
                 What's Hiding in Your Air Vents?
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                The average American home accumulates up to 40lbs of dust and 
-                allergens annually. Your HVAC system could be circulating 
+                The average American home accumulates up to 40lbs of dust and
+                allergens annually. Your HVAC system could be circulating
                 harmful particles throughout your living space.
               </p>
             </div>
@@ -167,17 +167,38 @@ export default function AirDuctCleaningPage() {
               Our Professional Process
             </h2>
             <p className="text-gray-500 text-lg">
-              We strictly adhere to NADCA standards to restore your HVAC system to like-new condition.
+              We strictly adhere to NADCA standards to restore your HVAC system
+              to like-new condition.
             </p>
           </div>
 
           <div className="grid md:grid-cols-5 gap-4">
             {[
-              { n: "01", t: "Inspection", d: "Full video diagnostic of your main trunk lines." },
-              { n: "02", t: "Pressurize", d: "Creating negative pressure for maximum suction." },
-              { n: "03", t: "Agitate", d: "Using specialized brushes to dislodge debris." },
-              { n: "04", t: "Vacuum", d: "High-powered HEPA collection of all dust." },
-              { n: "05", t: "Sanitize", d: "Optional EPA-registered antimicrobial fogging." },
+              {
+                n: "01",
+                t: "Inspection",
+                d: "Full video diagnostic of your main trunk lines.",
+              },
+              {
+                n: "02",
+                t: "Pressurize",
+                d: "Creating negative pressure for maximum suction.",
+              },
+              {
+                n: "03",
+                t: "Agitate",
+                d: "Using specialized brushes to dislodge debris.",
+              },
+              {
+                n: "04",
+                t: "Vacuum",
+                d: "High-powered HEPA collection of all dust.",
+              },
+              {
+                n: "05",
+                t: "Sanitize",
+                d: "Optional EPA-registered antimicrobial fogging.",
+              },
             ].map((step, i) => (
               <div
                 key={i}
@@ -233,7 +254,7 @@ export default function AirDuctCleaningPage() {
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gray-800 animate-pulse" />
                 <Image
-                  src="/images/duct-cleaning-action.jpg"
+                  src="/services_images/s1.png"
                   alt="Professional Duct Cleaning in Progress"
                   fill
                   className="object-cover"

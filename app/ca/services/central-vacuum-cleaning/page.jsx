@@ -78,14 +78,14 @@ export default function CentralVacuumCleaningPageCA() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              Hidden dust buildup inside your central vacuum pipes reduces airflow and spreads 
-              allergens. We perform a complete system purge to restore factory-grade 
-              suction to every inlet in your home.
+              Hidden dust buildup inside your central vacuum pipes reduces
+              airflow and spreads allergens. We perform a complete system purge
+              to restore factory-grade suction to every inlet in your home.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Restore Suction Power <ArrowRight className="h-5 w-5" />
@@ -119,9 +119,10 @@ export default function CentralVacuumCleaningPageCA() {
                 Hidden Pipes, Hidden Dust
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Most homeowners forget the kilometres of piping behind their walls. 
-                Static electricity causes fine dust to cling to these surfaces, 
-                creating "slugs" that eventually obstruct your cleaning power.
+                Most homeowners forget the kilometres of piping behind their
+                walls. Static electricity causes fine dust to cling to these
+                surfaces, creating "slugs" that eventually obstruct your
+                cleaning power.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +167,8 @@ export default function CentralVacuumCleaningPageCA() {
               The System Purge Process
             </h2>
             <p className="text-gray-500 text-lg">
-              We use specialized "tornado" nozzles to scrub your pipes from the inside out.
+              We use specialized "tornado" nozzles to scrub your pipes from the
+              inside out.
             </p>
           </div>
 
@@ -251,7 +253,7 @@ export default function CentralVacuumCleaningPageCA() {
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                 <Image
-                  src="/images/central-vac-service.jpg"
+                  src="/services_images/s3.png"
                   alt="Central Vacuum Maintenance Canada"
                   fill
                   className="object-cover opacity-90"

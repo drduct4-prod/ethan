@@ -78,14 +78,15 @@ export default function FurnaceBlowerCleaningPageCA() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              A dirty blower wheel can reduce airflow by up to 30%, causing your motor to overheat 
-              during peak winter months. We perform precision deep-fin cleaning to keep your 
-              furnace running silently and efficiently.
+              A dirty blower wheel can reduce airflow by up to 30%, causing your
+              motor to overheat during peak winter months. We perform precision
+              deep-fin cleaning to keep your furnace running silently and
+              efficiently.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Book Blower Service <ArrowRight className="h-5 w-5" />
@@ -119,9 +120,9 @@ export default function FurnaceBlowerCleaningPageCA() {
                 The Engine of Your Comfort
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                The blower assembly is responsible for circulating air through your heat exchanger 
-                and into your rooms. Accumulated dust creates mechanical drag, leading to 
-                costly motor burnout.
+                The blower assembly is responsible for circulating air through
+                your heat exchanger and into your rooms. Accumulated dust
+                creates mechanical drag, leading to costly motor burnout.
               </p>
             </div>
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
@@ -166,7 +167,8 @@ export default function FurnaceBlowerCleaningPageCA() {
               Our Restoration Process
             </h2>
             <p className="text-gray-500 text-lg">
-              We go beyond surface dusting to ensure a complete mechanical restoration.
+              We go beyond surface dusting to ensure a complete mechanical
+              restoration.
             </p>
           </div>
 
@@ -251,7 +253,7 @@ export default function FurnaceBlowerCleaningPageCA() {
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                 <Image
-                  src="/images/furnace-blower-wheel.jpg"
+                  src="/services_images/s5.png"
                   alt="Furnace Blower Maintenance Canada"
                   fill
                   className="object-cover"

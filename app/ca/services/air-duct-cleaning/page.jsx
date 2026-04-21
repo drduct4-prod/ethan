@@ -75,14 +75,14 @@ export default function AirDuctCleaningPageCA() {
             </h1>
 
             <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
-              During long winters, your home's air recirculates 7,000 times a day. 
-              Our hospital-grade HEPA filtration eliminates 99.9% of indoor 
+              During long winters, your home's air recirculates 7,000 times a
+              day. Our hospital-grade HEPA filtration eliminates 99.9% of indoor
               pollutants, ensuring a healthier home environment.
             </p>
 
             <div className="hero-text flex flex-col sm:flex-row gap-5">
               <Link
-                href="/book"
+                href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
               >
                 Book Your Inspection <ArrowRight className="h-5 w-5" />
@@ -90,7 +90,10 @@ export default function AirDuctCleaningPageCA() {
               <div className="flex items-center gap-4 px-2">
                 <div className="flex -space-x-3">
                   {[1, 2, 3].map((i) => (
-                    <div key={i} className="h-10 w-10 rounded-full border-2 border-white bg-blue-50 flex items-center justify-center">
+                    <div
+                      key={i}
+                      className="h-10 w-10 rounded-full border-2 border-white bg-blue-50 flex items-center justify-center"
+                    >
                       <ShieldCheck className="h-5 w-5 text-[#5E7AC4]" />
                     </div>
                   ))}
@@ -110,11 +113,12 @@ export default function AirDuctCleaningPageCA() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Fresh Air, <br />Maximum Efficiency
+                Fresh Air, <br />
+                Maximum Efficiency
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                A clean ventilation system doesn't just improve health; it 
-                lowers energy bills by allowing your HVAC system to breathe 
+                A clean ventilation system doesn't just improve health; it
+                lowers energy bills by allowing your HVAC system to breathe
                 freely against Canada's extreme temperatures.
               </p>
             </div>
@@ -160,17 +164,38 @@ export default function AirDuctCleaningPageCA() {
               Our 5-Step Process
             </h2>
             <p className="text-gray-500 text-lg">
-              Adhering to strict Canadian HVAC standards for total system decontamination.
+              Adhering to strict Canadian HVAC standards for total system
+              decontamination.
             </p>
           </div>
 
           <div className="grid md:grid-cols-5 gap-4">
             {[
-              { n: "01", t: "Diagnose", d: "Full HD camera inspection of all main trunk lines." },
-              { n: "02", t: "Isolate", d: "Creating a negative pressure zone for zero cross-contamination." },
-              { n: "03", t: "Agitate", d: "Industrial scrubbing tools to break loose heavy buildup." },
-              { n: "04", t: "Extract", d: "Powerful vacuum collection using medical-grade HEPA filters." },
-              { n: "05", t: "Sanitize", d: "Optional botanical fogging to ensure 100% microbial kill." },
+              {
+                n: "01",
+                t: "Diagnose",
+                d: "Full HD camera inspection of all main trunk lines.",
+              },
+              {
+                n: "02",
+                t: "Isolate",
+                d: "Creating a negative pressure zone for zero cross-contamination.",
+              },
+              {
+                n: "03",
+                t: "Agitate",
+                d: "Industrial scrubbing tools to break loose heavy buildup.",
+              },
+              {
+                n: "04",
+                t: "Extract",
+                d: "Powerful vacuum collection using medical-grade HEPA filters.",
+              },
+              {
+                n: "05",
+                t: "Sanitize",
+                d: "Optional botanical fogging to ensure 100% microbial kill.",
+              },
             ].map((step, i) => (
               <div
                 key={i}
@@ -225,7 +250,7 @@ export default function AirDuctCleaningPageCA() {
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/duct-cleaning-action.jpg"
+                  src="/services_images/s1.png"
                   alt="Professional Duct Cleaning Canada"
                   fill
                   className="object-cover"
