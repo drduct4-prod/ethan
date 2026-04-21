@@ -38,7 +38,7 @@ const NAV_LINKS = [
 
 const LANG_OPTIONS = [
   { code: "en", label: "EN" },
-  { code: "es", label: "ES" },
+  { code: "es", label: "SP" },
   { code: "fr", label: "FR" },
 ];
 
