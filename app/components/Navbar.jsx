@@ -17,6 +17,7 @@ import {
   X,
   Globe,
   MapPin,
+  Search,
 } from "lucide-react";
 import { urbanist, inter } from "../fonts";
 import Image from "next/image";
@@ -278,6 +279,9 @@ export default function Navbar() {
 
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
+  // ── NEW: mobile areas search state ────────
+  const [searchQuery, setSearchQuery] = useState("");
+
   const handleAnchorClick = useCallback((e, href) => {
     e.preventDefault();
     const el = document.getElementById(href.replace("#", ""));
@@ -526,8 +530,25 @@ export default function Navbar() {
         duration: 0.22,
         ease: "power2.in",
       });
+      // Clear search when accordion closes
+      setSearchQuery("");
     }
   }, [mobileAreasOpen]);
+
+  // ── Filtered areas based on search query ──
+  const filteredAreas = AREAS_CONFIG.map((region) => ({
+    ...region,
+    provinces: region.provinces
+      .map((province) => ({
+        ...province,
+        cities: province.cities.filter((city) =>
+          city.toLowerCase().includes(searchQuery.toLowerCase()),
+        ),
+      }))
+      .filter((province) => province.cities.length > 0),
+  })).filter((region) => region.provinces.length > 0);
+
+  const hasSearchResults = filteredAreas.some((r) => r.provinces.length > 0);
 
   return (
     <>
@@ -814,7 +835,6 @@ export default function Navbar() {
                             {province.cities.map((city) => (
                               <Link
                                 key={city}
-                                // href={`/${region.country}/areas/${province.slug}/${toCitySlug(city)}`}
                                 href={`#`}
                                 onClick={dismissAreasDropdown}
                                 className="text-[12px] text-gray-500 transition-colors duration-150 hover:text-[#5E7AC4] whitespace-nowrap"
@@ -987,42 +1007,60 @@ export default function Navbar() {
                 className="ml-3 pb-2 pl-3"
                 style={{ borderLeft: "1px solid rgba(255,255,255,0.1)" }}
               >
-                {AREAS_CONFIG.map((region) => (
-                  <div key={region.country} className="mb-3">
-                    {/* Country label */}
-                    <div className="flex items-center gap-1.5 px-3 py-1.5">
-                      <MapPin
-                        className="h-3 w-3 text-[#5E7AC4]"
-                        strokeWidth={2}
-                      />
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#5E7AC4]">
-                        {region.label}
-                      </span>
-                    </div>
-                    {region.provinces.map((province) => (
-                      <div key={province.slug} className="mb-2">
-                        {/* Province label */}
-                        <p className="px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white/30">
-                          {province.label}
-                        </p>
-                        {/* Cities */}
-                        <div className="flex flex-wrap gap-1.5 px-3 pb-1">
-                          {province.cities.map((city) => (
-                            <Link
-                              key={city}
-                              // href={`/${region.country}/areas/${province.slug}/${toCitySlug(city)}`}
-                              href={`#`}
-                              onClick={() => setMobileOpen(false)}
-                              className="rounded-md bg-white/5 px-2 py-1 text-[11px] text-white/55 transition-colors hover:bg-[#5E7AC4]/15 hover:text-[#5E7AC4]"
-                            >
-                              {city}
-                            </Link>
-                          ))}
-                        </div>
+                {/* ── Search input ── */}
+                <div className="relative mb-3 mt-1 px-1">
+                  <Search className="pointer-events-none absolute left-3.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-gray-400" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search your city..."
+                    className="w-full rounded-lg bg-white py-2 pl-8 pr-3 text-sm text-black placeholder-gray-400 outline-none focus:ring-2 focus:ring-[#5E7AC4]/50"
+                  />
+                </div>
+
+                {/* ── Filtered city list ── */}
+                {!hasSearchResults ? (
+                  <p className="px-3 py-3 text-[12px] text-white/40 italic">
+                    No locations found
+                  </p>
+                ) : (
+                  filteredAreas.map((region) => (
+                    <div key={region.country} className="mb-3">
+                      {/* Country label */}
+                      <div className="flex items-center gap-1.5 px-1 py-1.5">
+                        <MapPin
+                          className="h-3 w-3 text-[#5E7AC4]"
+                          strokeWidth={2}
+                        />
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#5E7AC4]">
+                          {region.label}
+                        </span>
                       </div>
-                    ))}
-                  </div>
-                ))}
+                      {region.provinces.map((province) => (
+                        <div key={province.slug} className="mb-2">
+                          {/* Province label */}
+                          <p className="px-1 py-1 text-[11px] font-semibold uppercase tracking-wider text-white/30">
+                            {province.label}
+                          </p>
+                          {/* Cities */}
+                          <div className="flex flex-wrap gap-2 px-1 pb-1">
+                            {province.cities.map((city) => (
+                              <Link
+                                key={city}
+                                href="/contactus"
+                                onClick={() => setMobileOpen(false)}
+                                className="rounded-md bg-white px-2 py-1 text-[11px] font-medium text-black transition-colors duration-150 hover:bg-[#5E7AC4] hover:text-white"
+                              >
+                                {city}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
