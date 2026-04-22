@@ -54,13 +54,29 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Ethan Duct Cleaning",
+        url: "https://www.ethanductscleaning.com",
+        alternateName: "Ethan Duct Cleaning Montreal",
+      }),
+    }}
+  />;
   return (
-    <html suppressHydrationWarning={true} lang="en" className="h-full antialiased">
+    <html
+      suppressHydrationWarning={true}
+      lang="en"
+      className="h-full antialiased"
+    >
       <body className="min-h-full flex flex-col">
         <LanguageProvider>
           <Navbar />
           {children}
-          <WhatsAppButton/>
+          <WhatsAppButton />
           <Footer />
         </LanguageProvider>
       </body>

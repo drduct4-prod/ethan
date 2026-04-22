@@ -67,7 +67,7 @@ const SOCIAL = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/15144004572",
+    href: "https://wa.me/+14386191084",
     icon: MessageCircle,
     external: true,
   },
