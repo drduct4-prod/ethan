@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import {
   Phone,
   Mail,
@@ -19,22 +18,6 @@ import {
 } from "lucide-react";
 import { urbanist, inter } from "../fonts";
 import { useLang } from "../context/LanguageContext";
-
-const SUPPORTED_COUNTRIES = ["us", "ca"];
-
-function useCountryPrefix() {
-  const pathname = usePathname();
-  const firstSegment = pathname?.split("/")?.[1] ?? "";
-  return SUPPORTED_COUNTRIES.includes(firstSegment) ? firstSegment : "us";
-}
-
-function createWithCountry(country) {
-  return function withCountry(href) {
-    const firstSegment = href.split("/")?.[1] ?? "";
-    if (SUPPORTED_COUNTRIES.includes(firstSegment)) return href;
-    return `/${country}${href}`;
-  };
-}
 
 const SERVICE_SLUGS = [
   {
@@ -99,8 +82,6 @@ const SOCIAL = [
 export default function Footer() {
   const { t } = useLang();
   const year = new Date().getFullYear();
-  const country = useCountryPrefix();
-  const withCountry = createWithCountry(country);
 
   const QUICK_LINKS = [
     { label: t.footer.links.home, href: "/" },
@@ -120,7 +101,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
           {/* COL 1 — Logo + About */}
           <div className="flex flex-col gap-5">
-            <Link href={withCountry("/")} className="inline-block w-fit">
+            <Link href="/" className="inline-block w-fit">
               <Image
                 src="/black_logo.png"
                 alt="Logo"
@@ -171,7 +152,7 @@ export default function Footer() {
               {QUICK_LINKS.map(({ label, href }) => (
                 <li key={label}>
                   <Link
-                    href={withCountry(href)}
+                    href={href}
                     className="group flex items-center gap-1.5 text-[13px] text-white/50 hover:text-[#5E7AC4] transition-colors"
                   >
                     <ChevronRight
@@ -192,7 +173,7 @@ export default function Footer() {
               {SERVICE_SLUGS.map(({ slug, href, icon: Icon }) => (
                 <li key={slug}>
                   <Link
-                    href={withCountry(href)}
+                    href={href}
                     className="group flex items-center gap-2 text-[13px] text-white/50 hover:text-[#5E7AC4] transition-colors"
                   >
                     <Icon
@@ -251,13 +232,13 @@ export default function Footer() {
           </p>
           <div className={`flex gap-5 ${inter.className}`}>
             <Link
-              href={withCountry("/privacy")}
+              href="/privacy"
               className="text-[11px] text-white/25 hover:text-white/60"
             >
               {t.footer.privacy}
             </Link>
             <Link
-              href={withCountry("/terms")}
+              href="/terms"
               className="text-[11px] text-white/25 hover:text-white/60"
             >
               {t.footer.terms}
