@@ -2,6 +2,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export const metadata = {
   title: "Ethan Duct Cleaning",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <LanguageProvider>
           <Navbar />
           {children}
+          <WhatsAppButton/>
           <Footer />
         </LanguageProvider>
       </body>
