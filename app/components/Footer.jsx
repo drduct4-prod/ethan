@@ -73,7 +73,7 @@ const SOCIAL = [
   },
   {
     label: "Email us",
-    href: "mailto:info@ethanductscleaning.com",
+    href: "mailto:ethanductcleaning@gmail.com",
     icon: Mail,
     external: false,
   },
@@ -192,15 +192,15 @@ export default function Footer() {
             <FooterHeading>{t.footer.contactInfo}</FooterHeading>
             <div className={`space-y-4 ${inter.className}`}>
               <ContactRow icon={Phone} href="tel:+15144004572" isLink>
-                +1 514-400-4572
+                +1 (438) 619-1084
               </ContactRow>
               <div className="space-y-1">
                 <ContactRow
                   icon={Mail}
-                  href="mailto:info@ethanductscleaning.com"
+                  href="mailto:ethanductcleaning@gmail.com"
                   isLink
                 >
-                  info@ethanductscleaning.com
+                  ethanductcleaning@gmail.com
                 </ContactRow>
                 <a
                   href="mailto:impeccablesolution0@gmail.com"

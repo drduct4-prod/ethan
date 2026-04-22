@@ -1,89 +1,61 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
   Wind,
   CheckCircle2,
   ArrowRight,
-  ThermometerSnowflake,
   Zap,
   Droplets,
   Settings2,
-  ShieldCheck,
   Activity,
 } from "lucide-react";
 import { urbanist } from "@/app/fonts";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+// ── SEO Metadata ──
+export const metadata = {
+  title: "Heat Pump Cleaning Montreal | Restore Efficiency & Save Energy",
+  description:
+    "Professional heat pump deep-coil cleaning in Montreal. Improve airflow, reduce hydro bills, and extend the life of your unit with our certified technicians.",
+  keywords: [
+    "heat pump cleaning Montreal",
+    "HVAC maintenance Canada",
+    "coil cleaning service",
+    "heat pump efficiency",
+  ],
+  alternates: {
+    canonical: "https://www.ethanductscleaning.com/services/heat-pump-cleaning",
+  },
+};
 
 export default function HeatPumpCleaningPageCA() {
-  const mainRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero Animation
-      gsap.from(".hero-text", {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "expo.out",
-      });
-
-      // Section Reveal
-      gsap.utils.toArray(".reveal-section").forEach((section) => {
-        gsap.from(section, {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-          },
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-      });
-    }, mainRef);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <main
-      ref={mainRef}
-      className={`min-h-screen bg-white text-gray-900 ${urbanist.className}`}
-    >
+    <main className={`min-h-screen bg-white text-gray-900 ${urbanist.className}`}>
       {/* ── Hero Section ── */}
       <section className="relative overflow-hidden pt-28 pb-20 lg:pt-40 lg:pb-32 bg-[#fcfcfc]">
         <div className="absolute top-0 right-0 w-150 h-150 bg-[#5E7AC4]/5 blur-[120px] rounded-full -mr-40 -mt-40" />
 
         <div className="mx-auto max-w-7xl px-5 lg:px-10 relative z-10">
           <div className="max-w-4xl">
-            <div className="hero-text inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#5E7AC4]/20 bg-[#5E7AC4]/5 px-4 py-1.5 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#5E7AC4] animate-pulse" />
               <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#5E7AC4]">
                 Cold-Climate Performance Specialists
               </span>
             </div>
 
-            <h1 className="hero-text text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
+            <h1 className="text-5xl lg:text-8xl font-bold leading-none tracking-tight text-gray-900 mb-8">
               Peak <span className="text-[#5E7AC4]">Efficiency.</span>
               <br />
               Canadian Comfort.
             </h1>
 
-            <p className="hero-text text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
+            <p className="text-xl lg:text-2xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
               Don't let ice or debris drive up your hydro bills. Our specialist
               deep-coil cleaning ensures your heat pump maintains maximum
               thermal output even during the harshest Canadian winters.
             </p>
 
-            <div className="hero-text flex flex-col sm:flex-row gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               <Link
                 href="/contactus"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d0d0d] px-10 py-5 text-lg font-bold text-white transition-all hover:bg-[#5E7AC4] active:scale-[0.98] shadow-xl shadow-black/10"
@@ -111,7 +83,7 @@ export default function HeatPumpCleaningPageCA() {
       </section>
 
       {/* ── Impact Section ── */}
-      <section className="reveal-section py-24 bg-white">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
@@ -159,7 +131,7 @@ export default function HeatPumpCleaningPageCA() {
       </section>
 
       {/* ── Process ── */}
-      <section className="reveal-section py-24 bg-[#f9fafb]">
+      <section className="py-24 bg-[#f9fafb]">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -219,7 +191,7 @@ export default function HeatPumpCleaningPageCA() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="reveal-section py-24 bg-white">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="rounded-[40px] bg-[#0d0d0d] overflow-hidden text-white p-10 lg:p-20 relative">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -243,18 +215,23 @@ export default function HeatPumpCleaningPageCA() {
                     </div>
                   ))}
                 </div>
-                <button className="mt-12 group flex items-center gap-3 text-xl font-bold">
+                {/* Fixed: Swapped button for Link component */}
+                <Link 
+                  href="/contactus"
+                  className="mt-12 group inline-flex items-center gap-3 text-xl font-bold"
+                >
                   View Maintenance Packages
                   <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                     <ArrowRight className="h-5 w-5" />
                   </div>
-                </button>
+                </Link>
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/services_images/s6.png"
-                  alt="Heat Pump Service Canada"
+                  alt="Certified Heat Pump Coil Cleaning Montreal"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-90"
                 />
               </div>

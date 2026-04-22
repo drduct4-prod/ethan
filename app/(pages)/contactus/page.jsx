@@ -55,7 +55,7 @@ const page = () => {
               <div className="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3">
                 <Phone className="h-4 w-4 text-gray-600" />
                 <span className="text-[13px] text-gray-700">
-                  +1 514-400-4572
+                  +1 (438) 619-1084
                 </span>
               </div>
 
@@ -63,7 +63,7 @@ const page = () => {
               <div className="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3">
                 <Mail className="h-4 w-4 text-gray-600" />
                 <span className="text-[13px] text-gray-700">
-                  info@impeccableducts.com
+                ethanductcleaning@gmail.com
                 </span>
               </div>
 

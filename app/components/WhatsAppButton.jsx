@@ -39,7 +39,7 @@ export default function WhatsAppButton() {
       aria-label="WhatsApp contact"
     >
       <Link
-        href="https://wa.me/+923422825143?text=Hello%20Ethan%20Ducts%20Cleaining%20I%20want%20service"
+        href="https://wa.me/+14386191084?text=Hello%20Ethan%20Ducts%20Cleaining%20I%20want%20service"
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#25D366] text-white transition-all duration-300 hover:scale-110 hover:bg-[#1ebe5d] shadow-lg hover:shadow-xl"
