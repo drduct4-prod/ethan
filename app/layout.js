@@ -6,6 +6,9 @@ import WhatsAppButton from "./components/WhatsAppButton";
 
 export const metadata = {
   metadataBase: new URL("https://www.ethanductscleaning.com"),
+  verification: {
+    google: "7p-0Vk7I0MmGu4jk_eD0qAEAMV7YtMnsgm-YzmwJKic",
+  },
 
   title: {
     default: "Ethan Duct Cleaning Montreal | Air Duct & Vent Experts",
