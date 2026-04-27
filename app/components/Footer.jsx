@@ -202,12 +202,7 @@ export default function Footer() {
                 >
                   ethanductcleaning@gmail.com
                 </ContactRow>
-                <a
-                  href="mailto:impeccablesolution0@gmail.com"
-                  className="block pl-7 text-[11px] text-white/30 hover:text-[#5E7AC4] transition-colors"
-                >
-                  impeccablesolution0@gmail.com
-                </a>
+               
               </div>
               <ContactRow icon={MapPin}>Montréal, Quebec, Canada</ContactRow>
             </div>
